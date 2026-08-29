@@ -31,7 +31,7 @@
   /* type */
   --font-display: "Fraunces", "Georgia", serif;
   --font-script: "Caveat", cursive;
-  --font-body: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Livvic", "Helvetica Neue", Arial, sans-serif;
   --font-logo: "Rose Club", "Caveat", cursive;
 
   --radius: 14px;
@@ -293,6 +293,7 @@ p {
 
 .hero-tagline {
   font-size: 1.15rem;
+  font-weight: 500;
   color: var(--text-soft);
   max-width: 46ch;
   margin: 22px 0 30px;
@@ -550,6 +551,7 @@ p {
 }
 
 .product-section-heading span {
+  font-weight: 500;
   color: var(--text-soft);
   font-size: 0.95rem;
 }
@@ -560,6 +562,7 @@ p {
 }
 
 .page-header p {
+  font-weight: 500;
   color: var(--text-soft);
   max-width: 56ch;
   margin: 0 auto;
