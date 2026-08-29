@@ -2,6 +2,14 @@
    CARMEL Goods — global stylesheet
    ========================================================= */
 
+@font-face {
+  font-family: "Rose Club";
+  src: url("fonts/RoseClub.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* base palette */
   --cream: #f5ede1;
@@ -24,6 +32,7 @@
   --font-display: "Fraunces", "Georgia", serif;
   --font-script: "Caveat", cursive;
   --font-body: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-logo: "Rose Club", "Caveat", cursive;
 
   --radius: 14px;
   --shadow-soft: 0 10px 30px rgba(60, 42, 30, 0.1);
@@ -207,9 +216,9 @@ p {
 }
 
 .logo-mark {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.9rem;
+  font-family: var(--font-logo);
+  font-weight: 400;
+  font-size: 2.3rem;
   letter-spacing: 0.02em;
   color: var(--text);
 }
