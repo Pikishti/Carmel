@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   markActiveNavLink();
   initContactForm();
   setFooterYear();
+  enhancePlaceholders();
+  initScrollReveal();
 });
 
 // Mobile nav toggle
@@ -35,7 +37,60 @@ function markActiveNavLink() {
     var linkPage = link.getAttribute("href");
     if (linkPage === currentPage) {
       link.classList.add("active");
+      link.setAttribute("aria-current", "page");
     }
+  });
+}
+
+// Give placeholder image blocks a proper accessible name instead of
+// exposing the raw description text (and the decorative camera icon) to
+// screen readers as plain content.
+function enhancePlaceholders() {
+  document.querySelectorAll(".img-placeholder").forEach(function (el) {
+    var label = el.querySelector("span");
+    if (!label) return;
+
+    el.setAttribute("role", "img");
+    el.setAttribute("aria-label", label.textContent.trim());
+    label.setAttribute("aria-hidden", "true");
+  });
+}
+
+// Fade/slide in key sections as they scroll into view.
+function initScrollReveal() {
+  var targets = document.querySelectorAll(
+    ".product-card, .value-card, .info-card, .about-grid, .story-card, .section-heading"
+  );
+  if (!targets.length) return;
+
+  targets.forEach(function (el) {
+    el.classList.add("reveal");
+  });
+
+  if (
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    targets.forEach(function (el) {
+      el.classList.add("revealed");
+    });
+    return;
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  targets.forEach(function (el) {
+    observer.observe(el);
   });
 }
 
@@ -45,6 +100,9 @@ function initContactForm() {
   var status = document.getElementById("form-status");
 
   if (!form || !status) return;
+
+  status.setAttribute("role", "status");
+  status.setAttribute("aria-live", "polite");
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
