@@ -60,7 +60,7 @@ function enhancePlaceholders() {
 // Fade/slide in key sections as they scroll into view.
 function initScrollReveal() {
   var targets = document.querySelectorAll(
-    ".product-card, .value-card, .info-card, .about-grid, .story-card, .section-heading, .chip-cloud, .quote-block, .contrast-list"
+    ".product-card, .value-card, .info-card, .about-grid, .story-card, .section-heading, .contrast-list"
   );
   if (!targets.length) return;
 
