@@ -443,7 +443,7 @@ p {
 
 .product-card .img-placeholder,
 .product-card .product-photo {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-radius: 0;
 }
 
