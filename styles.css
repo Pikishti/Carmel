@@ -27,6 +27,8 @@
   --vanilla: #b9862f;
   --mixed-berries: #a4294f;
   --garlic-chili: #8a3324;
+  --chimichurri: #5b7a3a;
+  --coffee: #3e2723;
 
   /* type */
   --font-display: "Fraunces", "Georgia", serif;
@@ -491,6 +493,35 @@ p {
   color: var(--accent);
 }
 
+/* Multiple size/price tiers for a single product */
+.product-sizes {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--cream-deep);
+}
+
+.product-sizes li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.9rem;
+}
+
+.product-sizes li + li {
+  border-top: 1px dashed var(--cream-deep);
+}
+
+.product-sizes .size {
+  color: var(--text-soft);
+}
+
+.product-sizes .price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--accent);
+}
+
 /* accent color classes */
 .accent-pumpkin-spice   { --accent: var(--pumpkin-spice); }
 .accent-brown-sugar     { --accent: var(--brown-sugar); }
@@ -498,6 +529,8 @@ p {
 .accent-vanilla         { --accent: var(--vanilla); }
 .accent-mixed-berries   { --accent: var(--mixed-berries); }
 .accent-garlic-chili    { --accent: var(--garlic-chili); }
+.accent-chimichurri     { --accent: var(--chimichurri); }
+.accent-coffee          { --accent: var(--coffee); }
 
 /* =========================================================
    CTA band
