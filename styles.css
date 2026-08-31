@@ -450,6 +450,7 @@ p {
 .product-tag {
   display: inline-block;
   align-self: flex-start;
+  flex-shrink: 0;
   background-color: var(--accent);
   color: var(--white);
   font-size: 0.7rem;
@@ -464,12 +465,13 @@ p {
 .product-card h3 {
   font-size: 1.25rem;
   margin-bottom: 6px;
+  flex-shrink: 0;
 }
 
 .product-desc {
   color: var(--text-soft);
   font-size: 0.92rem;
-  flex: 1;
+  flex: 1 0 auto;
 }
 
 .product-meta {
@@ -479,6 +481,7 @@ p {
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid var(--cream-deep);
+  flex-shrink: 0;
 }
 
 .product-size {
@@ -498,6 +501,7 @@ p {
   margin-top: 16px;
   padding-top: 12px;
   border-top: 1px solid var(--cream-deep);
+  flex-shrink: 0;
 }
 
 .product-sizes li {
@@ -528,6 +532,7 @@ p {
   padding: 14px 16px;
   background-color: var(--cream);
   border-radius: 10px;
+  flex-shrink: 0;
 }
 
 .flavor-picker-label {
@@ -861,6 +866,241 @@ p {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* =========================================================
+   About page — fun brand story sections
+   ========================================================= */
+
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+.fade-in-up {
+  animation: fadeUpIn 0.7s ease both;
+  animation-delay: var(--delay, 0s);
+}
+
+.fun-hero {
+  padding: 90px 0 60px;
+  text-align: center;
+}
+
+.fun-hero h1 {
+  font-size: 3.2rem;
+  margin: 10px 0 20px;
+}
+
+.fun-lead {
+  max-width: 62ch;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: var(--text-soft);
+}
+
+.fun-section {
+  padding: 70px 0;
+}
+
+.fun-section.alt-bg {
+  background-color: var(--white);
+}
+
+.fun-section .about-grid {
+  margin-bottom: 40px;
+}
+
+.fun-section .about-grid:last-child {
+  margin-bottom: 0;
+}
+
+/* Chip clouds */
+.chip-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.chip-cloud.center {
+  justify-content: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--white);
+  background-color: var(--wood);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.chip-cloud.revealed .chip {
+  opacity: 1;
+  transform: none;
+}
+
+.chip-cloud.revealed .chip:nth-child(1)  { transition-delay: 0.02s; }
+.chip-cloud.revealed .chip:nth-child(2)  { transition-delay: 0.08s; }
+.chip-cloud.revealed .chip:nth-child(3)  { transition-delay: 0.14s; }
+.chip-cloud.revealed .chip:nth-child(4)  { transition-delay: 0.20s; }
+.chip-cloud.revealed .chip:nth-child(5)  { transition-delay: 0.26s; }
+.chip-cloud.revealed .chip:nth-child(6)  { transition-delay: 0.32s; }
+.chip-cloud.revealed .chip:nth-child(7)  { transition-delay: 0.38s; }
+.chip-cloud.revealed .chip:nth-child(8)  { transition-delay: 0.44s; }
+.chip-cloud.revealed .chip:nth-child(9)  { transition-delay: 0.50s; }
+.chip-cloud.revealed .chip:nth-child(10) { transition-delay: 0.56s; }
+
+.chip-1 { background-color: var(--pumpkin-spice); }
+.chip-2 { background-color: var(--honey-cinnamon); }
+.chip-3 { background-color: var(--mixed-berries); }
+.chip-4 { background-color: var(--garlic-chili); }
+.chip-5 { background-color: var(--chimichurri); }
+.chip-6 { background-color: var(--coffee); }
+.chip-7 { background-color: var(--vanilla); }
+.chip-8 { background-color: var(--brown-sugar); }
+
+.chip-caption {
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  max-width: 56ch;
+  margin: 0 auto;
+}
+
+/* Big bilingual quote */
+.quote-block {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 56px 40px;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.quote-es {
+  font-family: var(--font-script);
+  font-size: 2.6rem;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+.quote-en {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+/* Not / is contrast list */
+.contrast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.contrast-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.contrast-list.revealed .contrast-row {
+  opacity: 1;
+  transform: none;
+}
+
+.contrast-list.revealed .contrast-row:nth-child(1) { transition-delay: 0.02s; }
+.contrast-list.revealed .contrast-row:nth-child(2) { transition-delay: 0.10s; }
+.contrast-list.revealed .contrast-row:nth-child(3) { transition-delay: 0.18s; }
+.contrast-list.revealed .contrast-row:nth-child(4) { transition-delay: 0.26s; }
+.contrast-list.revealed .contrast-row:nth-child(5) { transition-delay: 0.34s; }
+.contrast-list.revealed .contrast-row:nth-child(6) { transition-delay: 0.42s; }
+
+.contrast-not {
+  text-align: right;
+  color: var(--text-soft);
+  text-decoration: line-through;
+  text-decoration-color: var(--tan);
+  font-size: 0.95rem;
+}
+
+.contrast-arrow {
+  color: var(--wood);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.contrast-is {
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.signature-line {
+  text-align: center;
+  font-family: var(--font-script);
+  font-size: 3rem;
+  color: var(--wood);
+  margin: 0 0 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .chip,
+  .contrast-row {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .fun-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .contrast-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .contrast-not,
+  .contrast-is {
+    text-align: center;
+  }
+
+  .quote-es {
+    font-size: 2rem;
+  }
+
+  .signature-line {
+    font-size: 2.2rem;
   }
 }
 

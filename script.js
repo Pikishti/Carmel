@@ -60,7 +60,7 @@ function enhancePlaceholders() {
 // Fade/slide in key sections as they scroll into view.
 function initScrollReveal() {
   var targets = document.querySelectorAll(
-    ".product-card, .value-card, .info-card, .about-grid, .story-card, .section-heading"
+    ".product-card, .value-card, .info-card, .about-grid, .story-card, .section-heading, .chip-cloud, .quote-block, .contrast-list"
   );
   if (!targets.length) return;
 
@@ -134,7 +134,7 @@ function initContactForm() {
     event.preventDefault();
 
     status.textContent =
-      "Thanks for reaching out! This form is a placeholder for now — hook it up to your email or form service to start receiving messages.";
+      "Thanks for reaching out! This form is a placeholder for now. Hook it up to your email or form service to start receiving messages.";
     status.classList.add("visible");
 
     form.reset();
