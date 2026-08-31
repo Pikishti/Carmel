@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setFooterYear();
   enhancePlaceholders();
   initScrollReveal();
+  initFlavorPicker();
 });
 
 // Mobile nav toggle
@@ -92,6 +93,31 @@ function initScrollReveal() {
   targets.forEach(function (el) {
     observer.observe(el);
   });
+}
+
+// Butter Sample Pack flavor picker — caps selection at 3 of 4 checkboxes
+function initFlavorPicker() {
+  var boxes = document.querySelectorAll('input[name="sample-flavor"]');
+  if (!boxes.length) return;
+
+  var MAX = 3;
+
+  function update() {
+    var checkedCount = 0;
+    boxes.forEach(function (box) {
+      if (box.checked) checkedCount++;
+    });
+
+    boxes.forEach(function (box) {
+      box.disabled = !box.checked && checkedCount >= MAX;
+    });
+  }
+
+  boxes.forEach(function (box) {
+    box.addEventListener("change", update);
+  });
+
+  update();
 }
 
 // Contact form — UI only, does not submit anywhere yet
