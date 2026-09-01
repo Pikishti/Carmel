@@ -120,7 +120,7 @@ function initFlavorPicker() {
   update();
 }
 
-// Contact form — UI only, does not submit anywhere yet
+// Contact form — submits to Formspree without leaving the page
 function initContactForm() {
   var form = document.getElementById("contact-form");
   var status = document.getElementById("form-status");
@@ -130,14 +130,43 @@ function initContactForm() {
   status.setAttribute("role", "status");
   status.setAttribute("aria-live", "polite");
 
+  var submitButton = form.querySelector('button[type="submit"]');
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    status.textContent =
-      "Thanks for reaching out! This form is a placeholder for now. Hook it up to your email or form service to start receiving messages.";
-    status.classList.add("visible");
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
 
-    form.reset();
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    })
+      .then(function (response) {
+        if (response.ok) {
+          status.textContent =
+            "Thanks for reaching out! We've received your message and will get back to you soon.";
+          status.classList.remove("error");
+          status.classList.add("visible");
+          form.reset();
+        } else {
+          throw new Error("Form submission failed");
+        }
+      })
+      .catch(function () {
+        status.textContent =
+          "Something went wrong sending your message. Please try again or email us directly at info@carmelgoods.com.";
+        status.classList.add("visible", "error");
+      })
+      .finally(function () {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = "Send Message";
+        }
+      });
   });
 }
 

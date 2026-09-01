@@ -59,7 +59,8 @@
     <section class="contact-section">
       <div class="container contact-grid">
 
-        <form class="contact-form" id="contact-form">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mgaekaop" method="POST">
+          <input type="hidden" name="_subject" value="New message from Carmel website contact form" />
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -73,7 +74,6 @@
             <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Send Message</button>
-          <p class="form-note">This form is UI-only for now. Connect it to an email or form service to start receiving messages.</p>
           <div class="form-status" id="form-status"></div>
         </form>
 

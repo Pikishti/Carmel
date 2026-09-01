@@ -858,6 +858,11 @@ p {
   display: block;
 }
 
+.form-status.error {
+  background-color: var(--mixed-berries);
+  color: var(--white);
+}
+
 /* =========================================================
    Scroll reveal
    ========================================================= */
