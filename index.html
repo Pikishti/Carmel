@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +35,7 @@
   </script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="common.skip_link">Skip to main content</a>
 
   <header class="site-header">
     <div class="nav-wrap container">
@@ -43,17 +43,23 @@
         <span class="logo-mark">CARMEL</span>
         <span class="logo-sub">Goods</span>
       </a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button type="button" class="lang-btn" data-lang="es" aria-label="Español">🇬🇹</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="English">🇺🇸</button>
+        </div>
+        <button class="nav-toggle" data-i18n-aria="common.nav_toggle_aria" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -65,13 +71,13 @@
         <div class="hero-copy">
           <span class="logo-mark">CARMEL</span>
           <span class="logo-sub">Goods</span>
-          <p class="hero-tagline">
+          <p class="hero-tagline" data-i18n="home.hero_tagline">
             Inspired by the art of savoring life, <span class="font-logo">Carmel</span> was created for those who
             find joy in life's simplest moments and choose to live it fully.
           </p>
           <div class="hero-actions">
-            <a href="products.html" class="btn btn-primary">Shop the Collection</a>
-            <a href="about.html" class="btn btn-outline">Our Story</a>
+            <a href="products.html" class="btn btn-primary" data-i18n="home.cta_shop">Shop the Collection</a>
+            <a href="about.html" class="btn btn-outline" data-i18n="home.cta_story">Our Story</a>
           </div>
         </div>
         <div class="hero-image">
@@ -84,7 +90,7 @@
     <section class="story-teaser">
       <div class="container">
         <div class="story-card">
-          <p>
+          <p data-i18n="home.story_teaser">
             Every jar and bottle is made in small batches, with the kind
             of care you'd give something made for your own kitchen table. CARMEL
             Goods is for slow mornings, shared meals, and the simple moments worth
@@ -98,8 +104,8 @@
     <section class="featured-products">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Fan Favorites</span>
-          <h2>Featured Products</h2>
+          <span class="eyebrow" data-i18n="home.fan_favorites">Fan Favorites</span>
+          <h2 data-i18n="home.featured_heading">Featured Products</h2>
         </div>
 
         <div class="product-grid">
@@ -107,9 +113,9 @@
           <article class="product-card accent-pumpkin-spice">
             <img src="images/pumpkin-spice-syrup.jpg" alt="Bottle of CARMEL Goods Pumpkin Spice Syrup" class="product-photo" loading="lazy" />
             <div class="product-card-body">
-              <span class="product-tag">Syrup</span>
-              <h3>Pumpkin Spice</h3>
-              <p class="product-desc">Warm autumn spice blended with real pumpkin and cinnamon for lattes, baking, and waffles.</p>
+              <span class="product-tag" data-i18n="common.tag_syrup">Syrup</span>
+              <h3 data-i18n="home.product_pumpkin_name">Pumpkin Spice</h3>
+              <p class="product-desc" data-i18n="home.product_pumpkin_desc">Warm autumn spice blended with real pumpkin and cinnamon for lattes, baking, and waffles.</p>
               <div class="product-meta">
                 <span class="product-size">250ml / 8.45oz</span>
                 <span class="product-price">$14.00</span>
@@ -120,9 +126,9 @@
           <article class="product-card accent-honey-cinnamon">
             <img src="images/honey-cinnamon-syrup.jpg" alt="Bottle of CARMEL Goods Honey Cinnamon Syrup" class="product-photo" loading="lazy" />
             <div class="product-card-body">
-              <span class="product-tag">Syrup</span>
-              <h3>Honey Cinnamon</h3>
-              <p class="product-desc">Golden honey slow-steeped with Ceylon cinnamon, equally at home in coffee or tea.</p>
+              <span class="product-tag" data-i18n="common.tag_syrup">Syrup</span>
+              <h3 data-i18n="home.product_honeycinnamon_name">Honey Cinnamon</h3>
+              <p class="product-desc" data-i18n="home.product_honeycinnamon_desc">Golden honey slow-steeped with Ceylon cinnamon, equally at home in coffee or tea.</p>
               <div class="product-meta">
                 <span class="product-size">250ml / 8.45oz</span>
                 <span class="product-price">$13.00</span>
@@ -133,9 +139,9 @@
           <article class="product-card accent-garlic-chili">
             <img src="images/crispy-garlic-chili-butter.jpg" alt="Jar of CARMEL Goods Crispy Garlic and Chili Butter" class="product-photo" loading="lazy" />
             <div class="product-card-body">
-              <span class="product-tag">Butter</span>
-              <h3>Crispy Garlic and Chili</h3>
-              <p class="product-desc">Roasted garlic and crispy chili flakes folded into rich, creamy butter for a savory, crunchy finish.</p>
+              <span class="product-tag" data-i18n="common.tag_butter">Butter</span>
+              <h3 data-i18n="home.product_garlicchili_name">Crispy Garlic and Chili</h3>
+              <p class="product-desc" data-i18n="home.product_garlicchili_desc">Roasted garlic and crispy chili flakes folded into rich, creamy butter for a savory, crunchy finish.</p>
               <div class="product-meta">
                 <span class="product-size">170g / 6.0oz</span>
                 <span class="product-price">$14.00</span>
@@ -146,9 +152,9 @@
           <article class="product-card accent-mixed-berries">
             <img src="images/mixed-berries-syrup.jpg" alt="Bottle of CARMEL Goods Mixed Berries Syrup" class="product-photo" loading="lazy" />
             <div class="product-card-body">
-              <span class="product-tag">Syrup</span>
-              <h3>Mixed Berries</h3>
-              <p class="product-desc">Sun-ripened berries simmered down into a bright, fruity syrup for drinks and desserts.</p>
+              <span class="product-tag" data-i18n="common.tag_syrup">Syrup</span>
+              <h3 data-i18n="home.product_mixedberries_name">Mixed Berries</h3>
+              <p class="product-desc" data-i18n="home.product_mixedberries_desc">Sun-ripened berries simmered down into a bright, fruity syrup for drinks and desserts.</p>
               <div class="product-meta">
                 <span class="product-size">250ml / 8.45oz</span>
                 <span class="product-price">$14.00</span>
@@ -163,9 +169,9 @@
     <!-- CTA -->
     <section class="cta-band">
       <div class="container">
-        <h2>Ready to Savor Something New?</h2>
-        <p>Explore the full lineup of small-batch syrups and flavored butters.</p>
-        <a href="products.html" class="btn btn-outline">View All Products</a>
+        <h2 data-i18n="home.cta_heading">Ready to Savor Something New?</h2>
+        <p data-i18n="home.cta_text">Explore the full lineup of small-batch syrups and flavored butters.</p>
+        <a href="products.html" class="btn btn-outline" data-i18n="home.cta_button">View All Products</a>
       </div>
     </section>
 
@@ -177,19 +183,19 @@
         <div class="footer-about">
           <span class="logo-mark">CARMEL</span>
           <span class="logo-sub">Goods</span>
-          <p>A lifestyle brand built on living fully, starting with a good morning.</p>
+          <p data-i18n="common.footer_tagline">A lifestyle brand built on living fully, starting with a good morning.</p>
         </div>
         <div class="footer-col">
-          <h4>Explore</h4>
+          <h4 data-i18n="common.footer_explore">Explore</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h4 data-i18n="common.footer_connect">Connect</h4>
           <ul>
             <li><a href="https://instagram.com/carmel.goods" target="_blank" rel="noopener">@carmel.goods</a></li>
             <li><a href="mailto:info@carmelgoods.com">info@carmelgoods.com</a></li>
@@ -197,11 +203,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; <span id="footer-year"></span> CARMEL Goods. All rights reserved.
+        &copy; <span id="footer-year"></span> CARMEL Goods. <span data-i18n="common.footer_rights">All rights reserved.</span>
       </div>
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

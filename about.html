@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="common.skip_link">Skip to main content</a>
 
   <header class="site-header">
     <div class="nav-wrap container">
@@ -32,17 +32,23 @@
         <span class="logo-mark">CARMEL</span>
         <span class="logo-sub">Goods</span>
       </a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button type="button" class="lang-btn" data-lang="es" aria-label="Español">🇬🇹</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="English">🇺🇸</button>
+        </div>
+        <button class="nav-toggle" data-i18n-aria="common.nav_toggle_aria" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -52,9 +58,9 @@
     <section class="photo-hero">
       <img src="images/cafe-counter.jpg" alt="Barista reaching for a lineup of CARMEL Goods syrup bottles on a wooden cafe counter" loading="eager" />
       <div class="photo-hero-content">
-        <span class="eyebrow fade-in-up" style="--delay: 0s">Our Philosophy</span>
-        <h1 class="fade-in-up" style="--delay: 0.1s">Live Fully.</h1>
-        <p class="fade-in-up" style="--delay: 0.2s">
+        <span class="eyebrow fade-in-up" style="--delay: 0s" data-i18n="about.hero_eyebrow">Our Philosophy</span>
+        <h1 class="fade-in-up" style="--delay: 0.1s" data-i18n="about.hero_title">Live Fully.</h1>
+        <p class="fade-in-up" style="--delay: 0.2s" data-i18n="about.hero_lead">
           <span class="font-logo">Carmel</span> began with a love of breakfast
           and the morning ritual. It's about enjoying the simple things, being
           thankful, and living fully.
@@ -67,14 +73,14 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-copy">
-            <span class="eyebrow">Where We Began</span>
-            <h2>It Started With Breakfast</h2>
-            <p>
+            <span class="eyebrow" data-i18n="about.breakfast_eyebrow">Where We Began</span>
+            <h2 data-i18n="about.breakfast_title">It Started With Breakfast</h2>
+            <p data-i18n="about.breakfast_p1">
               Morning light. A slow pour of coffee. Toast, warm, waiting for
               butter. That's the feeling <span class="font-logo">Carmel</span>
               was built around.
             </p>
-            <p>
+            <p data-i18n="about.breakfast_p2">
               But breakfast was only ever the beginning of the story, not the
               edge of the brand.
             </p>
@@ -91,14 +97,14 @@
       <div class="container">
         <div class="about-grid reverse">
           <div class="about-copy">
-            <span class="eyebrow">The Origin</span>
-            <h2>A Country Dream, Lived in the Real World</h2>
-            <p>
+            <span class="eyebrow" data-i18n="about.origin_eyebrow">The Origin</span>
+            <h2 data-i18n="about.origin_title">A Country Dream, Lived in the Real World</h2>
+            <p data-i18n="about.origin_p1">
               <span class="font-logo">Carmel</span> started as a daydream: a
               house in the country, a garden full of flowers, a slower and more
               delicious kind of life made mostly from scratch.
             </p>
-            <p>
+            <p data-i18n="about.origin_p2">
               But <span class="font-logo">Carmel</span> doesn't romanticize
               escaping modern life. It combines that dream with the reality of
               today: the phone, convenience, style, modern life.
@@ -108,8 +114,8 @@
             <img src="images/brown-sugar-pour.jpg" alt="Hand pouring CARMEL Goods Brown Sugar Syrup from a swing-top bottle into a cup of espresso" class="product-photo" loading="lazy" />
           </div>
         </div>
-        <p class="editorial-line">Simple and elevated. Warm and modern. Comfort and style. Beauty and practicality. Tradition and modernity.</p>
-        <p class="editorial-line">The dream isn't to recreate an old-fashioned life. It's to bring that feeling into this one.</p>
+        <p class="editorial-line" data-i18n="about.origin_line1">Simple and elevated. Warm and modern. Comfort and style. Beauty and practicality. Tradition and modernity.</p>
+        <p class="editorial-line" data-i18n="about.origin_line2">The dream isn't to recreate an old-fashioned life. It's to bring that feeling into this one.</p>
       </div>
     </section>
 
@@ -128,9 +134,9 @@
       <div class="container">
         <div class="about-grid reverse">
           <div class="about-copy">
-            <span class="eyebrow">The Core Belief</span>
-            <h2>Small Moments Deserve Big Attention</h2>
-            <p>
+            <span class="eyebrow" data-i18n="about.core_eyebrow">The Core Belief</span>
+            <h2 data-i18n="about.core_title">Small Moments Deserve Big Attention</h2>
+            <p data-i18n="about.core_p">
               A beautiful life isn't made of extraordinary events. It's made of
               little ones, noticed and enjoyed on purpose.
             </p>
@@ -139,7 +145,7 @@
             <img src="images/honey-cinnamon-waffles.jpg" alt="CARMEL Goods Honey Cinnamon Syrup poured over a stack of waffles with butter, pecans, and strawberries" class="product-photo" loading="lazy" />
           </div>
         </div>
-        <p class="editorial-line">A good cup of coffee. A favorite candle. A table set simply. A Sunday morning.</p>
+        <p class="editorial-line" data-i18n="about.core_line">A good cup of coffee. A favorite candle. A table set simply. A Sunday morning.</p>
       </div>
     </section>
 
@@ -147,30 +153,30 @@
     <section class="fun-section alt-bg">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Let's Be Clear</span>
-          <h2>What &ldquo;Live Fully&rdquo; Actually Means</h2>
+          <span class="eyebrow" data-i18n="about.clear_eyebrow">Let's Be Clear</span>
+          <h2 data-i18n="about.clear_title">What &ldquo;Live Fully&rdquo; Actually Means</h2>
         </div>
 
         <div class="contrast-list">
           <div class="contrast-row">
-            <span class="contrast-not">Not extravagance</span>
+            <span class="contrast-not" data-i18n="about.contrast1_not">Not extravagance</span>
             <span class="contrast-arrow">&rarr;</span>
-            <span class="contrast-is">Just presence</span>
+            <span class="contrast-is" data-i18n="about.contrast1_is">Just presence</span>
           </div>
           <div class="contrast-row">
-            <span class="contrast-not">Not buying more</span>
+            <span class="contrast-not" data-i18n="about.contrast2_not">Not buying more</span>
             <span class="contrast-arrow">&rarr;</span>
-            <span class="contrast-is">Noticing more</span>
+            <span class="contrast-is" data-i18n="about.contrast2_is">Noticing more</span>
           </div>
           <div class="contrast-row">
-            <span class="contrast-not">Not chasing perfect</span>
+            <span class="contrast-not" data-i18n="about.contrast3_not">Not chasing perfect</span>
             <span class="contrast-arrow">&rarr;</span>
-            <span class="contrast-is">Enjoying real</span>
+            <span class="contrast-is" data-i18n="about.contrast3_is">Enjoying real</span>
           </div>
           <div class="contrast-row">
-            <span class="contrast-not">Not a productivity hack</span>
+            <span class="contrast-not" data-i18n="about.contrast4_not">Not a productivity hack</span>
             <span class="contrast-arrow">&rarr;</span>
-            <span class="contrast-is">Permission to slow down</span>
+            <span class="contrast-is" data-i18n="about.contrast4_is">Permission to slow down</span>
           </div>
         </div>
       </div>
@@ -181,9 +187,9 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-copy">
-            <span class="eyebrow">Our Personality</span>
-            <h2>If <span class="font-logo">Carmel</span> Were a Person</h2>
-            <p>
+            <span class="eyebrow" data-i18n="about.personality_eyebrow">Our Personality</span>
+            <h2 data-i18n="about.personality_title">If <span class="font-logo">Carmel</span> Were a Person</h2>
+            <p data-i18n="about.personality_p">
               Picture the friend with impeccable taste who makes everything
               feel easy, beautiful, and a little bit fun, and somehow makes you
               feel better about your own life just by being around.
@@ -193,7 +199,7 @@
             <img src="images/lineup-arch.jpg" alt="Five CARMEL Goods syrup bottles arranged on a wooden board beneath a sunlit archway" class="product-photo" loading="lazy" />
           </div>
         </div>
-        <p class="editorial-line">Bold, yet warm. Playful, never childish. Stylish, never showy.</p>
+        <p class="editorial-line" data-i18n="about.personality_line">Bold, yet warm. Playful, never childish. Stylish, never showy.</p>
       </div>
     </section>
 
@@ -202,10 +208,10 @@
       <div class="container">
         <div class="about-grid reverse">
           <div class="about-copy">
-            <span class="eyebrow">The Feeling</span>
-            <h2>Me Lo Merezco.</h2>
-            <p class="signature-line">Of course I can enjoy this.</p>
-            <p>
+            <span class="eyebrow" data-i18n="about.feeling_eyebrow">The Feeling</span>
+            <h2 data-i18n="about.feeling_title">Me Lo Merezco.</h2>
+            <p class="signature-line" data-i18n="about.feeling_signature">Of course I can enjoy this.</p>
+            <p data-i18n="about.feeling_p">
               Not guilt, not indulgence. Just the quiet confidence that you're
               allowed to enjoy something beautiful without explaining yourself.
             </p>
@@ -221,14 +227,14 @@
     <section class="fun-section">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">What's Next</span>
-          <h2>Bigger Than Breakfast</h2>
-          <p>
+          <span class="eyebrow" data-i18n="about.next_eyebrow">What's Next</span>
+          <h2 data-i18n="about.next_title">Bigger Than Breakfast</h2>
+          <p data-i18n="about.next_p">
             <span class="font-logo">Carmel</span> is a world, not a category.
             The products can grow over time, but the feeling stays the same.
           </p>
         </div>
-        <p class="editorial-line">Food. Drinks. Home. Ceramics. Candles. Hospitality.</p>
+        <p class="editorial-line" data-i18n="about.next_line">Food. Drinks. Home. Ceramics. Candles. Hospitality.</p>
       </div>
     </section>
 
@@ -236,9 +242,9 @@
     <section class="fun-section alt-bg">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Right Now</span>
-          <h2>Here's Where We Actually Are</h2>
-          <p>
+          <span class="eyebrow" data-i18n="about.now_eyebrow">Right Now</span>
+          <h2 data-i18n="about.now_title">Here's Where We Actually Are</h2>
+          <p data-i18n="about.now_p">
             Today, that feeling lives in glass bottles of syrup and small jars
             of butter, made in small batches.
           </p>
@@ -246,20 +252,20 @@
 
         <div class="value-grid">
           <div class="value-card">
-            <h3>Small-Batch</h3>
-            <p>Made in limited quantities so every batch gets the attention it deserves.</p>
+            <h3 data-i18n="about.value_smallbatch_title">Small-Batch</h3>
+            <p data-i18n="about.value_smallbatch_desc">Made in limited quantities so every batch gets the attention it deserves.</p>
           </div>
           <div class="value-card">
-            <h3>Made With Care</h3>
-            <p>Every syrup simmers on the stove and every butter is whipped fresh, batch by batch.</p>
+            <h3 data-i18n="about.value_care_title">Made With Care</h3>
+            <p data-i18n="about.value_care_desc">Every syrup simmers on the stove and every butter is whipped fresh, batch by batch.</p>
           </div>
           <div class="value-card">
-            <h3>Simple Ingredients</h3>
-            <p>Honest, recognizable ingredients that let each flavor shine on its own.</p>
+            <h3 data-i18n="about.value_ingredients_title">Simple Ingredients</h3>
+            <p data-i18n="about.value_ingredients_desc">Honest, recognizable ingredients that let each flavor shine on its own.</p>
           </div>
           <div class="value-card">
-            <h3>Made for Savoring</h3>
-            <p>Created for the slow mornings and shared moments worth lingering over.</p>
+            <h3 data-i18n="about.value_savoring_title">Made for Savoring</h3>
+            <p data-i18n="about.value_savoring_desc">Created for the slow mornings and shared moments worth lingering over.</p>
           </div>
         </div>
       </div>
@@ -267,9 +273,9 @@
 
     <section class="cta-band">
       <div class="container">
-        <h2>Ready to Live a Little Fuller?</h2>
-        <p>Start with a good cup of coffee and a bottle of something delicious.</p>
-        <a href="products.html" class="btn btn-outline">Shop the Collection</a>
+        <h2 data-i18n="about.cta_heading">Ready to Live a Little Fuller?</h2>
+        <p data-i18n="about.cta_text">Start with a good cup of coffee and a bottle of something delicious.</p>
+        <a href="products.html" class="btn btn-outline" data-i18n="about.cta_button">Shop the Collection</a>
       </div>
     </section>
 
@@ -281,19 +287,19 @@
         <div class="footer-about">
           <span class="logo-mark">CARMEL</span>
           <span class="logo-sub">Goods</span>
-          <p>A lifestyle brand built on living fully, starting with a good morning.</p>
+          <p data-i18n="common.footer_tagline">A lifestyle brand built on living fully, starting with a good morning.</p>
         </div>
         <div class="footer-col">
-          <h4>Explore</h4>
+          <h4 data-i18n="common.footer_explore">Explore</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h4 data-i18n="common.footer_connect">Connect</h4>
           <ul>
             <li><a href="https://instagram.com/carmel.goods" target="_blank" rel="noopener">@carmel.goods</a></li>
             <li><a href="mailto:info@carmelgoods.com">info@carmelgoods.com</a></li>
@@ -301,11 +307,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; <span id="footer-year"></span> CARMEL Goods. All rights reserved.
+        &copy; <span id="footer-year"></span> CARMEL Goods. <span data-i18n="common.footer_rights">All rights reserved.</span>
       </div>
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

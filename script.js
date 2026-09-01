@@ -9,7 +9,91 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollReveal();
   initFlavorPicker();
   initWhatsAppBubble();
+  initLanguageToggle();
 });
+
+// =============================================================
+// Language toggle (English / Spanish). See translations.js for the
+// actual copy. This block only knows how to look up and apply it.
+// =============================================================
+
+var LANG_STORAGE_KEY = "carmel_lang";
+var DEFAULT_LANG = "es";
+
+// Reads the visitor's saved language, or the default if none is stored yet.
+function getCurrentLang() {
+  try {
+    return localStorage.getItem(LANG_STORAGE_KEY) || DEFAULT_LANG;
+  } catch (e) {
+    return DEFAULT_LANG;
+  }
+}
+
+// Looks up a dot-path key (e.g. "home.featured_heading") in translations.js.
+function getTranslation(key, lang) {
+  var dict = window.CARMEL_TRANSLATIONS && window.CARMEL_TRANSLATIONS[lang];
+  if (!dict) return null;
+
+  var value = dict;
+  var parts = key.split(".");
+  for (var i = 0; i < parts.length; i++) {
+    if (value == null) return null;
+    value = value[parts[i]];
+  }
+  return typeof value === "string" ? value : null;
+}
+
+// Applies a language to every tagged element on the current page.
+function applyLanguage(lang) {
+  document.documentElement.setAttribute("lang", lang);
+
+  document.querySelectorAll("[data-i18n]").forEach(function (el) {
+    var value = getTranslation(el.getAttribute("data-i18n"), lang);
+    if (value != null) el.innerHTML = value;
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+    var value = getTranslation(el.getAttribute("data-i18n-placeholder"), lang);
+    if (value != null) el.setAttribute("placeholder", value);
+  });
+
+  document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+    var value = getTranslation(el.getAttribute("data-i18n-aria"), lang);
+    if (value != null) el.setAttribute("aria-label", value);
+  });
+
+  document.querySelectorAll(".lang-btn").forEach(function (btn) {
+    var isActive = btn.getAttribute("data-lang") === lang;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+
+  updateWhatsAppLink(lang);
+}
+
+// Saves the choice and re-renders the page in that language, no reload.
+function setLanguage(lang) {
+  try {
+    localStorage.setItem(LANG_STORAGE_KEY, lang);
+  } catch (e) {
+    /* localStorage unavailable (private mode, etc.) — language just won't persist */
+  }
+  applyLanguage(lang);
+}
+
+// Wires up the two flag buttons in the nav and renders the initial language.
+function initLanguageToggle() {
+  var buttons = document.querySelectorAll(".lang-btn");
+  if (!buttons.length) return;
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      setLanguage(btn.getAttribute("data-lang"));
+    });
+  });
+
+  applyLanguage(getCurrentLang());
+}
 
 // Mobile nav toggle
 function initNavToggle() {
@@ -135,10 +219,11 @@ function initContactForm() {
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
+    var lang = getCurrentLang();
 
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
+      submitButton.textContent = getTranslation("contact.submit_sending", lang) || "Sending...";
     }
 
     fetch(form.action, {
@@ -149,6 +234,7 @@ function initContactForm() {
       .then(function (response) {
         if (response.ok) {
           status.textContent =
+            getTranslation("contact.status_success", lang) ||
             "Thanks for reaching out! We've received your message and will get back to you soon.";
           status.classList.remove("error");
           status.classList.add("visible");
@@ -159,13 +245,14 @@ function initContactForm() {
       })
       .catch(function () {
         status.textContent =
+          getTranslation("contact.status_error", lang) ||
           "Something went wrong sending your message. Please try again or email us directly at info@carmelgoods.com.";
         status.classList.add("visible", "error");
       })
       .finally(function () {
         if (submitButton) {
           submitButton.disabled = false;
-          submitButton.textContent = "Send Message";
+          submitButton.textContent = getTranslation("contact.submit_button", lang) || "Send Message";
         }
       });
   });
@@ -179,17 +266,32 @@ function setFooterYear() {
   }
 }
 
+// Builds the wa.me link with the prefilled message in the given language.
+function buildWhatsAppUrl(lang) {
+  var message =
+    getTranslation("whatsapp.message", lang) || getTranslation("whatsapp.message", DEFAULT_LANG);
+  return "https://wa.me/50252125030?text=" + encodeURIComponent(message);
+}
+
+// Refreshes the bubble's link and label whenever the language changes.
+function updateWhatsAppLink(lang) {
+  var link = document.querySelector(".whatsapp-bubble");
+  if (!link) return;
+
+  link.href = buildWhatsAppUrl(lang);
+
+  var ariaLabel = getTranslation("whatsapp.aria", lang);
+  if (ariaLabel) link.setAttribute("aria-label", ariaLabel);
+}
+
 // Floating WhatsApp chat bubble — injected on every page so it only has to live here once
 function initWhatsAppBubble() {
   if (document.querySelector(".whatsapp-bubble")) return;
 
   var link = document.createElement("a");
   link.className = "whatsapp-bubble";
-  link.href =
-    "https://wa.me/50252125030?text=Hi%20Carmel%20Goods%2C%20I%27d%20like%20to%20ask%20about%20your%20products";
   link.target = "_blank";
   link.rel = "noopener noreferrer";
-  link.setAttribute("aria-label", "Chat with CARMEL Goods on WhatsApp");
   link.innerHTML =
     '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
     '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path>' +
@@ -197,4 +299,5 @@ function initWhatsAppBubble() {
     "</svg>";
 
   document.body.appendChild(link);
+  updateWhatsAppLink(getCurrentLang());
 }

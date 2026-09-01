@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="common.skip_link">Skip to main content</a>
 
   <header class="site-header">
     <div class="nav-wrap container">
@@ -32,17 +32,23 @@
         <span class="logo-mark">CARMEL</span>
         <span class="logo-sub">Goods</span>
       </a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button type="button" class="lang-btn" data-lang="es" aria-label="Español">🇬🇹</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="English">🇺🇸</button>
+        </div>
+        <button class="nav-toggle" data-i18n-aria="common.nav_toggle_aria" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -50,9 +56,9 @@
 
     <section class="page-header">
       <div class="container">
-        <span class="eyebrow">Get in Touch</span>
-        <h1>We'd Love to Hear From You</h1>
-        <p>Questions about an order, wholesale, or just want to say hi? Send a message below.</p>
+        <span class="eyebrow" data-i18n="contact.eyebrow">Get in Touch</span>
+        <h1 data-i18n="contact.title">We'd Love to Hear From You</h1>
+        <p data-i18n="contact.intro">Questions about an order, wholesale, or just want to say hi? Send a message below.</p>
       </div>
     </section>
 
@@ -62,36 +68,36 @@
         <form class="contact-form" id="contact-form" action="https://formspree.io/f/mgaekaop" method="POST">
           <input type="hidden" name="_subject" value="New message from Carmel website contact form" />
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
+            <label for="name" data-i18n="contact.label_name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" data-i18n-placeholder="contact.placeholder_name" required />
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            <label for="email" data-i18n="contact.label_email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" data-i18n-placeholder="contact.placeholder_email" required />
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+            <label for="message" data-i18n="contact.label_message">Message</label>
+            <textarea id="message" name="message" placeholder="How can we help?" data-i18n-placeholder="contact.placeholder_message" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.submit_button">Send Message</button>
           <div class="form-status" id="form-status"></div>
         </form>
 
         <div class="contact-info">
           <div class="info-card">
-            <h3>Instagram</h3>
+            <h3 data-i18n="contact.info_instagram">Instagram</h3>
             <p><a href="https://instagram.com/carmel.goods" target="_blank" rel="noopener">@carmel.goods</a></p>
             <div class="social-links">
-              <a href="https://instagram.com/carmel.goods" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+              <a href="https://instagram.com/carmel.goods" target="_blank" rel="noopener" data-i18n-aria="common.instagram_aria" aria-label="Instagram">IG</a>
             </div>
           </div>
           <div class="info-card">
-            <h3>Email</h3>
+            <h3 data-i18n="contact.info_email">Email</h3>
             <p><a href="mailto:info@carmelgoods.com">info@carmelgoods.com</a></p>
           </div>
           <div class="info-card">
-            <h3>More Links</h3>
-            <p>Placeholder for additional links: wholesale inquiries, press, or a link-in-bio page.</p>
+            <h3 data-i18n="contact.info_morelinks">More Links</h3>
+            <p data-i18n="contact.info_morelinks_text">Placeholder for additional links: wholesale inquiries, press, or a link-in-bio page.</p>
           </div>
         </div>
 
@@ -106,19 +112,19 @@
         <div class="footer-about">
           <span class="logo-mark">CARMEL</span>
           <span class="logo-sub">Goods</span>
-          <p>A lifestyle brand built on living fully, starting with a good morning.</p>
+          <p data-i18n="common.footer_tagline">A lifestyle brand built on living fully, starting with a good morning.</p>
         </div>
         <div class="footer-col">
-          <h4>Explore</h4>
+          <h4 data-i18n="common.footer_explore">Explore</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h4 data-i18n="common.footer_connect">Connect</h4>
           <ul>
             <li><a href="https://instagram.com/carmel.goods" target="_blank" rel="noopener">@carmel.goods</a></li>
             <li><a href="mailto:info@carmelgoods.com">info@carmelgoods.com</a></li>
@@ -126,11 +132,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; <span id="footer-year"></span> CARMEL Goods. All rights reserved.
+        &copy; <span id="footer-year"></span> CARMEL Goods. <span data-i18n="common.footer_rights">All rights reserved.</span>
       </div>
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

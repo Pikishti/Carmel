@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="common.skip_link">Skip to main content</a>
 
   <header class="site-header">
     <div class="nav-wrap container">
@@ -32,17 +32,23 @@
         <span class="logo-mark">CARMEL</span>
         <span class="logo-sub">Goods</span>
       </a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button type="button" class="lang-btn" data-lang="es" aria-label="Español">🇬🇹</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="English">🇺🇸</button>
+        </div>
+        <button class="nav-toggle" data-i18n-aria="common.nav_toggle_aria" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -50,9 +56,9 @@
 
     <section class="page-header">
       <div class="container">
-        <span class="eyebrow">The Collection</span>
-        <h1>Syrups &amp; Butters</h1>
-        <p>Small-batch and made for savoring. Browse every flavor in the CARMEL Goods lineup.</p>
+        <span class="eyebrow" data-i18n="products_page.eyebrow">The Collection</span>
+        <h1 data-i18n="products_page.heading">Syrups &amp; Butters</h1>
+        <p data-i18n="products_page.intro">Small-batch and made for savoring. Browse every flavor in the CARMEL Goods lineup.</p>
       </div>
     </section>
 
@@ -62,8 +68,8 @@
         <!-- Syrups -->
         <div class="product-section-block" id="syrups">
           <div class="product-section-heading">
-            <h2>Syrups</h2>
-            <span>Coffee syrups, crafted with real ingredients</span>
+            <h2 data-i18n="products_page.syrups_heading">Syrups</h2>
+            <span data-i18n="products_page.syrups_subtitle">Coffee syrups, crafted with real ingredients</span>
           </div>
 
           <div class="product-grid">
@@ -71,9 +77,9 @@
             <article class="product-card accent-pumpkin-spice">
               <img src="images/pumpkin-spice-syrup.jpg" alt="Bottle of CARMEL Goods Pumpkin Spice Syrup" class="product-photo" loading="lazy" />
               <div class="product-card-body">
-                <span class="product-tag">Syrup</span>
-                <h3>Pumpkin Spice</h3>
-                <p class="product-desc">Warm autumn spice blended with real pumpkin and cinnamon for lattes, baking, and waffles.</p>
+                <span class="product-tag" data-i18n="common.tag_syrup">Syrup</span>
+                <h3 data-i18n="products_page.pumpkin_name">Pumpkin Spice</h3>
+                <p class="product-desc" data-i18n="products_page.pumpkin_desc">Warm autumn spice blended with real pumpkin and cinnamon for lattes, baking, and waffles.</p>
                 <div class="product-meta">
                   <span class="product-size">250ml / 8.45oz</span>
                   <span class="product-price">$14.00</span>
@@ -84,9 +90,9 @@
             <article class="product-card accent-brown-sugar">
               <img src="images/brown-sugar-syrup.jpg" alt="Bottle of CARMEL Goods Brown Sugar Syrup" class="product-photo" loading="lazy" />
               <div class="product-card-body">
-                <span class="product-tag">Syrup</span>
-                <h3>Brown Sugar</h3>
-                <p class="product-desc">Deep, rich sweetness that turns any coffee, latte, or waffle stack into something special.</p>
+                <span class="product-tag" data-i18n="common.tag_syrup">Syrup</span>
+                <h3 data-i18n="products_page.brownsugar_name">Brown Sugar</h3>
+                <p class="product-desc" data-i18n="products_page.brownsugar_desc">Deep, rich sweetness that turns any coffee, latte, or waffle stack into something special.</p>
                 <div class="product-meta">
                   <span class="product-size">250ml / 8.45oz</span>
                   <span class="product-price">$13.00</span>
@@ -97,9 +103,9 @@
             <article class="product-card accent-honey-cinnamon">
               <img src="images/honey-cinnamon-syrup.jpg" alt="Bottle of CARMEL Goods Honey Cinnamon Syrup" class="product-photo" loading="lazy" />
               <div class="product-card-body">
-                <span class="product-tag">Syrup</span>
-                <h3>Honey Cinnamon</h3>
-                <p class="product-desc">Golden honey slow-steeped with Ceylon cinnamon, equally at home in coffee or tea.</p>
+                <span class="product-tag" data-i18n="common.tag_syrup">Syrup</span>
+                <h3 data-i18n="products_page.honeycinnamon_name">Honey Cinnamon</h3>
+                <p class="product-desc" data-i18n="products_page.honeycinnamon_desc">Golden honey slow-steeped with Ceylon cinnamon, equally at home in coffee or tea.</p>
                 <div class="product-meta">
                   <span class="product-size">250ml / 8.45oz</span>
                   <span class="product-price">$13.00</span>
@@ -110,9 +116,9 @@
             <article class="product-card accent-vanilla">
               <img src="images/vanilla-syrup.jpg" alt="Bottle of CARMEL Goods Vanilla Syrup" class="product-photo" loading="lazy" />
               <div class="product-card-body">
-                <span class="product-tag">Syrup</span>
-                <h3>Vanilla</h3>
-                <p class="product-desc">Classic Madagascar vanilla, slow-steeped for a smooth, fragrant sweetness in every cup.</p>
+                <span class="product-tag" data-i18n="common.tag_syrup">Syrup</span>
+                <h3 data-i18n="products_page.vanilla_name">Vanilla</h3>
+                <p class="product-desc" data-i18n="products_page.vanilla_desc">Classic Madagascar vanilla, slow-steeped for a smooth, fragrant sweetness in every cup.</p>
                 <div class="product-meta">
                   <span class="product-size">250ml / 8.45oz</span>
                   <span class="product-price">$12.00</span>
@@ -123,9 +129,9 @@
             <article class="product-card accent-mixed-berries">
               <img src="images/mixed-berries-syrup.jpg" alt="Bottle of CARMEL Goods Mixed Berries Syrup" class="product-photo" loading="lazy" />
               <div class="product-card-body">
-                <span class="product-tag">Syrup</span>
-                <h3>Mixed Berries</h3>
-                <p class="product-desc">Sun-ripened berries simmered down into a bright, fruity syrup for drinks and desserts.</p>
+                <span class="product-tag" data-i18n="common.tag_syrup">Syrup</span>
+                <h3 data-i18n="products_page.mixedberries_syrup_name">Mixed Berries</h3>
+                <p class="product-desc" data-i18n="products_page.mixedberries_syrup_desc">Sun-ripened berries simmered down into a bright, fruity syrup for drinks and desserts.</p>
                 <div class="product-meta">
                   <span class="product-size">250ml / 8.45oz</span>
                   <span class="product-price">$14.00</span>
@@ -139,8 +145,8 @@
         <!-- Butters -->
         <div class="product-section-block" id="butters">
           <div class="product-section-heading">
-            <h2>Butters</h2>
-            <span>Flavored butters, crafted with real ingredients</span>
+            <h2 data-i18n="products_page.butters_heading">Butters</h2>
+            <span data-i18n="products_page.butters_subtitle">Flavored butters, crafted with real ingredients</span>
           </div>
 
           <div class="product-grid">
@@ -148,9 +154,9 @@
             <article class="product-card accent-garlic-chili">
               <img src="images/crispy-garlic-chili-butter.jpg" alt="Jar of CARMEL Goods Garlic and Chili Butter" class="product-photo" loading="lazy" />
               <div class="product-card-body">
-                <span class="product-tag">Butter</span>
-                <h3>Garlic and Chili</h3>
-                <p class="product-desc">Roasted garlic and crispy chili flakes folded into rich, creamy butter for a savory, crunchy finish.</p>
+                <span class="product-tag" data-i18n="common.tag_butter">Butter</span>
+                <h3 data-i18n="products_page.garlicchili_name">Garlic and Chili</h3>
+                <p class="product-desc" data-i18n="products_page.garlicchili_desc">Roasted garlic and crispy chili flakes folded into rich, creamy butter for a savory, crunchy finish.</p>
                 <ul class="product-sizes">
                   <li><span class="size">170g / 6.0oz</span><span class="price">$14.00</span></li>
                   <li><span class="size">113g / 4.0oz</span><span class="price">$11.50</span></li>
@@ -162,9 +168,9 @@
             <article class="product-card accent-chimichurri">
               <img src="images/chimichurri-butter.jpg" alt="Jar of CARMEL Goods Chimichurri Butter" class="product-photo" loading="lazy" />
               <div class="product-card-body">
-                <span class="product-tag">Butter</span>
-                <h3>Chimichurri</h3>
-                <p class="product-desc">Fresh parsley, garlic, and a splash of vinegar swirled into creamy butter for a herby, tangy finish on steak, bread, or veggies.</p>
+                <span class="product-tag" data-i18n="common.tag_butter">Butter</span>
+                <h3 data-i18n="products_page.chimichurri_name">Chimichurri</h3>
+                <p class="product-desc" data-i18n="products_page.chimichurri_desc">Fresh parsley, garlic, and a splash of vinegar swirled into creamy butter for a herby, tangy finish on steak, bread, or veggies.</p>
                 <ul class="product-sizes">
                   <li><span class="size">170g / 6.0oz</span><span class="price">$14.00</span></li>
                   <li><span class="size">113g / 4.0oz</span><span class="price">$11.50</span></li>
@@ -176,9 +182,9 @@
             <article class="product-card accent-coffee">
               <img src="images/coffee-butter.jpg" alt="Jar of CARMEL Goods Espresso Coffee Butter" class="product-photo" loading="lazy" />
               <div class="product-card-body">
-                <span class="product-tag">Butter</span>
-                <h3>Coffee</h3>
-                <p class="product-desc">Rich espresso folded into creamy butter for a bold, subtly sweet spread that's perfect on toast or melted over pancakes.</p>
+                <span class="product-tag" data-i18n="common.tag_butter">Butter</span>
+                <h3 data-i18n="products_page.coffee_name">Coffee</h3>
+                <p class="product-desc" data-i18n="products_page.coffee_desc">Rich espresso folded into creamy butter for a bold, subtly sweet spread that's perfect on toast or melted over pancakes.</p>
                 <ul class="product-sizes">
                   <li><span class="size">170g / 6.0oz</span><span class="price">$14.00</span></li>
                   <li><span class="size">113g / 4.0oz</span><span class="price">$11.50</span></li>
@@ -190,9 +196,9 @@
             <article class="product-card accent-mixed-berries">
               <img src="images/mixed-berries-butter.jpg" alt="Jar of CARMEL Goods Mixed Berries Butter" class="product-photo" loading="lazy" />
               <div class="product-card-body">
-                <span class="product-tag">Butter</span>
-                <h3>Mixed Berries</h3>
-                <p class="product-desc">Sun-ripened berries swirled into whipped butter for a naturally sweet, fruity spread.</p>
+                <span class="product-tag" data-i18n="common.tag_butter">Butter</span>
+                <h3 data-i18n="products_page.mixedberries_butter_name">Mixed Berries</h3>
+                <p class="product-desc" data-i18n="products_page.mixedberries_butter_desc">Sun-ripened berries swirled into whipped butter for a naturally sweet, fruity spread.</p>
                 <ul class="product-sizes">
                   <li><span class="size">170g / 6.0oz</span><span class="price">$14.00</span></li>
                   <li><span class="size">113g / 4.0oz</span><span class="price">$11.50</span></li>
@@ -204,23 +210,23 @@
             <article class="product-card accent-sampler">
               <img src="images/butter-sample-pack.jpg" alt="Four CARMEL Goods 1oz butter jars: Garlic and Chili, Mixed Berries, Espresso Coffee, and Chimichurri" class="product-photo" loading="lazy" />
               <div class="product-card-body">
-                <span class="product-tag">Sample Pack</span>
-                <h3>Butter Sample Pack</h3>
-                <p class="product-desc">Can't decide? Pick any 3 of our 4 butter flavors in convenient 1 oz jars, perfect for trying something new or gifting.</p>
+                <span class="product-tag" data-i18n="products_page.sample_pack_tag">Sample Pack</span>
+                <h3 data-i18n="products_page.sample_pack_name">Butter Sample Pack</h3>
+                <p class="product-desc" data-i18n="products_page.sample_pack_desc">Can't decide? Pick any 3 of our 4 butter flavors in convenient 1 oz jars, perfect for trying something new or gifting.</p>
 
                 <div class="flavor-picker">
-                  <p class="flavor-picker-label">Choose 3 flavors:</p>
+                  <p class="flavor-picker-label" data-i18n="products_page.flavor_picker_label">Choose 3 flavors:</p>
                   <div class="flavor-options">
-                    <label><input type="checkbox" name="sample-flavor" value="Garlic and Chili" checked /> Garlic and Chili</label>
-                    <label><input type="checkbox" name="sample-flavor" value="Chimichurri" checked /> Chimichurri</label>
-                    <label><input type="checkbox" name="sample-flavor" value="Espresso Coffee" checked /> Espresso Coffee</label>
-                    <label><input type="checkbox" name="sample-flavor" value="Mixed Berries" /> Mixed Berries</label>
+                    <label><input type="checkbox" name="sample-flavor" value="Garlic and Chili" checked /> <span data-i18n="products_page.flavor_garlicchili">Garlic and Chili</span></label>
+                    <label><input type="checkbox" name="sample-flavor" value="Chimichurri" checked /> <span data-i18n="products_page.flavor_chimichurri">Chimichurri</span></label>
+                    <label><input type="checkbox" name="sample-flavor" value="Espresso Coffee" checked /> <span data-i18n="products_page.flavor_coffee">Espresso Coffee</span></label>
+                    <label><input type="checkbox" name="sample-flavor" value="Mixed Berries" /> <span data-i18n="products_page.flavor_mixedberries">Mixed Berries</span></label>
                   </div>
-                  <p class="flavor-picker-note">This selector is UI-only for now. Note your 3 flavors when you order.</p>
+                  <p class="flavor-picker-note" data-i18n="products_page.flavor_picker_note">This selector is UI-only for now. Note your 3 flavors when you order.</p>
                 </div>
 
                 <div class="product-meta">
-                  <span class="product-size">3 &times; 28g / 1oz jars</span>
+                  <span class="product-size" data-i18n="products_page.sample_size_label">3 &times; 28g / 1oz jars</span>
                   <span class="product-price">$15.00</span>
                 </div>
               </div>
@@ -240,19 +246,19 @@
         <div class="footer-about">
           <span class="logo-mark">CARMEL</span>
           <span class="logo-sub">Goods</span>
-          <p>A lifestyle brand built on living fully, starting with a good morning.</p>
+          <p data-i18n="common.footer_tagline">A lifestyle brand built on living fully, starting with a good morning.</p>
         </div>
         <div class="footer-col">
-          <h4>Explore</h4>
+          <h4 data-i18n="common.footer_explore">Explore</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h4 data-i18n="common.footer_connect">Connect</h4>
           <ul>
             <li><a href="https://instagram.com/carmel.goods" target="_blank" rel="noopener">@carmel.goods</a></li>
             <li><a href="mailto:info@carmelgoods.com">info@carmelgoods.com</a></li>
@@ -260,11 +266,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; <span id="footer-year"></span> CARMEL Goods. All rights reserved.
+        &copy; <span id="footer-year"></span> CARMEL Goods. <span data-i18n="common.footer_rights">All rights reserved.</span>
       </div>
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
