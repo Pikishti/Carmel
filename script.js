@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   enhancePlaceholders();
   initScrollReveal();
   initFlavorPicker();
+  initWhatsAppBubble();
 });
 
 // Mobile nav toggle
@@ -176,4 +177,24 @@ function setFooterYear() {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+}
+
+// Floating WhatsApp chat bubble — injected on every page so it only has to live here once
+function initWhatsAppBubble() {
+  if (document.querySelector(".whatsapp-bubble")) return;
+
+  var link = document.createElement("a");
+  link.className = "whatsapp-bubble";
+  link.href =
+    "https://wa.me/50252125030?text=Hi%20Carmel%20Goods%2C%20I%27d%20like%20to%20ask%20about%20your%20products";
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.setAttribute("aria-label", "Chat with CARMEL Goods on WhatsApp");
+  link.innerHTML =
+    '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+    '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path>' +
+    '<path d="M12.004 2c-5.523 0-10 4.477-10 10 0 1.769.462 3.478 1.334 4.978L2 22l5.223-1.32c1.44.78 3.058 1.191 4.781 1.191h.005c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 18.148h-.004c-1.545 0-3.062-.415-4.396-1.198l-.315-.187-3.11.785.83-3.03-.205-.313A8.14 8.14 0 0 1 3.85 12c0-4.502 3.652-8.148 8.154-8.148 4.502 0 8.148 3.646 8.148 8.148 0 4.502-3.646 8.148-8.148 8.148z"></path>' +
+    "</svg>";
+
+  document.body.appendChild(link);
 }
