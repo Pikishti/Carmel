@@ -32,9 +32,11 @@
   --sampler: #f2a0b0;
 
   /* type */
-  --font-display: "Fraunces", "Georgia", serif;
   --font-body: "Livvic", "Helvetica Neue", Arial, sans-serif;
-  --font-logo: "Rose Club", "Fraunces", cursive;
+  --font-logo: "Rose Club", "Livvic", cursive;
+  --weight-title: 900;
+  --weight-subtitle: 600;
+  --weight-body: 300;
 
   --radius: 14px;
   --shadow-soft: 0 10px 30px rgba(61, 28, 2, 0.12);
@@ -60,6 +62,7 @@ body {
   background-color: var(--cream);
   color: var(--text);
   font-family: var(--font-body);
+  font-weight: var(--weight-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -115,8 +118,8 @@ ul {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-weight: var(--weight-title);
   margin: 0 0 0.5em;
   color: var(--text);
   letter-spacing: -0.01em;
@@ -234,7 +237,7 @@ p {
 }
 
 .logo-sub {
-  font-family: var(--font-display);
+  font-family: "Fraunces", "Georgia", serif;
   font-style: italic;
   font-weight: 600;
   font-size: 1.2rem;
@@ -336,12 +339,6 @@ p {
   transform: none;
 }
 
-@media (max-width: 720px) {
-  .nav-right {
-    gap: 14px;
-  }
-}
-
 /* =========================================================
    Hero
    ========================================================= */
@@ -368,7 +365,7 @@ p {
 
 .hero-tagline {
   font-size: 1.15rem;
-  font-weight: 500;
+  font-weight: var(--weight-subtitle);
   color: var(--text-soft);
   max-width: 46ch;
   margin: 22px 0 30px;
@@ -450,7 +447,8 @@ p {
 }
 
 .story-card p {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
+  font-weight: var(--weight-subtitle);
   font-size: 1.4rem;
   line-height: 1.5;
   color: var(--text);
@@ -565,8 +563,8 @@ p {
 }
 
 .product-price {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-weight: var(--weight-title);
   font-size: 1.15rem;
   color: var(--price-ink);
 }
@@ -596,8 +594,8 @@ p {
 }
 
 .product-sizes .price {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-weight: var(--weight-title);
   color: var(--price-ink);
 }
 
@@ -626,6 +624,7 @@ p {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 6px 0;
   font-size: 0.88rem;
   color: var(--text-soft);
   cursor: pointer;
@@ -720,7 +719,7 @@ p {
 }
 
 .product-section-heading span {
-  font-weight: 500;
+  font-weight: var(--weight-subtitle);
   color: var(--text-soft);
   font-size: 0.95rem;
 }
@@ -731,7 +730,7 @@ p {
 }
 
 .page-header p {
-  font-weight: 500;
+  font-weight: var(--weight-subtitle);
   color: var(--text-soft);
   max-width: 56ch;
   margin: 0 auto;
@@ -772,6 +771,14 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
   margin-top: 20px;
+}
+
+/* At tablet widths, auto-fit would naturally land on 3 columns (with the
+   4th value card wrapping alone). Force a clean 2x2 grid instead. */
+@media (min-width: 561px) and (max-width: 900px) {
+  .value-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .value-card {
@@ -832,7 +839,7 @@ p {
   border-radius: 10px;
   background-color: var(--cream);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -893,8 +900,8 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: var(--cream);
   border: 1.5px solid var(--tan);
@@ -1032,8 +1039,8 @@ p {
 /* Short italic accent line, used in place of keyword bubbles */
 .editorial-line {
   text-align: center;
-  font-family: var(--font-display);
-  font-style: italic;
+  font-family: var(--font-body);
+  font-weight: var(--weight-subtitle);
   font-size: 1.35rem;
   line-height: 1.6;
   color: var(--text);
@@ -1042,8 +1049,8 @@ p {
 }
 
 .accent-word {
-  font-family: var(--font-display);
-  font-style: italic;
+  font-family: var(--font-body);
+  font-weight: var(--weight-subtitle);
   color: var(--wood);
 }
 
@@ -1059,18 +1066,17 @@ p {
 }
 
 .quote-es {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 2.6rem;
+  font-family: var(--font-body);
+  font-weight: var(--weight-title);
+  font-size: 2.4rem;
   line-height: 1.2;
   color: var(--text);
   margin: 0 0 10px;
 }
 
 .quote-en {
-  font-family: var(--font-display);
-  font-style: italic;
+  font-family: var(--font-body);
+  font-weight: var(--weight-subtitle);
   font-size: 1.1rem;
   color: var(--text-soft);
   margin: 0;
@@ -1119,18 +1125,17 @@ p {
 
 .contrast-is {
   text-align: left;
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-weight: var(--weight-title);
   color: var(--text);
   font-size: 1.05rem;
 }
 
 .signature-line {
   text-align: center;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 2.6rem;
+  font-family: var(--font-body);
+  font-weight: var(--weight-title);
+  font-size: 2.4rem;
   color: var(--wood);
   margin: 0 0 16px;
 }
@@ -1295,6 +1300,12 @@ p {
     width: 25px;
     height: 25px;
   }
+
+  /* keep the fixed WhatsApp bubble from sitting on top of the last
+     footer content when the page is scrolled all the way down */
+  .site-footer {
+    padding-bottom: 96px;
+  }
 }
 
 /* =========================================================
@@ -1345,11 +1356,34 @@ p {
 
   .nav-links a {
     width: 100%;
-    padding: 10px 0;
+    padding: 13px 0;
+    font-size: 1rem;
   }
 
   .nav-toggle {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .lang-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+
+  .logo-mark {
+    font-size: 1.9rem;
+  }
+
+  .logo-sub {
+    font-size: 1rem;
   }
 
   .hero-copy .logo-mark {
@@ -1358,6 +1392,10 @@ p {
 
   .hero-copy .logo-sub {
     font-size: 1.6rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.7rem;
   }
 
   .story-card {
