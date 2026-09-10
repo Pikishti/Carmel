@@ -237,6 +237,26 @@ p {
   color: var(--text);
 }
 
+/* Two-line CARMEL wordmark construction (CAR / MEL, MEL shifted right).
+   Font-family/weight/color/size all still come from .logo-mark above
+   (including its responsive overrides); this only adds the two-line
+   layout. Proportions measured from production logo artwork, do not
+   adjust. */
+.carmel-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.carmel-mark .car {
+  line-height: 0.9;
+}
+
+.carmel-mark .mel {
+  line-height: 0.84;
+  margin-left: 0.71em;
+}
+
 /* Inline brand-name mentions within running copy */
 .font-logo {
   font-family: var(--font-logo);
