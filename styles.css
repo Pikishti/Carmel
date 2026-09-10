@@ -10,6 +10,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Hinato";
+  src: url("fonts/Hinato.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* official CARMEL brand palette */
   --cream: #fff8e7;
@@ -32,11 +40,12 @@
   --sampler: #f2a0b0;
 
   /* type */
-  --font-body: "Livvic", "Livvic", Arial, sans-serif;
+  --font-body: "Livvic", Arial, sans-serif;
   --font-logo: "Rose Club", "Livvic", cursive;
-  --weight-title: 900;
+  --weight-title: 700;
   --weight-subtitle: 600;
-  --weight-body: 300;
+  --weight-body: 400;
+  --weight-emphasis: 500;
 
   --radius: 14px;
   --shadow-soft: 0 10px 30px rgba(61, 28, 2, 0.12);
@@ -237,9 +246,8 @@ p {
 }
 
 .logo-sub {
-  font-family: "Fraunces", "Georgia", serif;
-  font-style: italic;
-  font-weight: 600;
+  font-family: "Hinato", "Georgia", serif;
+  font-weight: normal;
   font-size: 1.2rem;
   color: var(--wood);
   margin-top: -2px;
@@ -365,7 +373,8 @@ p {
 
 .hero-tagline {
   font-size: 1.15rem;
-  font-weight: var(--weight-subtitle);
+  font-style: italic;
+  font-weight: var(--weight-emphasis);
   color: var(--text-soft);
   max-width: 46ch;
   margin: 22px 0 30px;
@@ -536,6 +545,7 @@ p {
 }
 
 .product-card h3 {
+  font-weight: var(--weight-subtitle);
   font-size: 1.25rem;
   margin-bottom: 6px;
   flex-shrink: 0;
@@ -730,7 +740,8 @@ p {
 }
 
 .page-header p {
-  font-weight: var(--weight-subtitle);
+  font-style: italic;
+  font-weight: var(--weight-emphasis);
   color: var(--text-soft);
   max-width: 56ch;
   margin: 0 auto;
@@ -790,6 +801,7 @@ p {
 }
 
 .value-card h3 {
+  font-weight: var(--weight-subtitle);
   font-size: 1.1rem;
 }
 
@@ -876,6 +888,7 @@ p {
 }
 
 .info-card h3 {
+  font-weight: var(--weight-subtitle);
   font-size: 1rem;
   margin-bottom: 8px;
 }
