@@ -521,7 +521,6 @@ p {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  border-top: 6px solid var(--accent);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
@@ -547,6 +546,7 @@ p {
   display: flex;
   flex-direction: column;
   flex: 1;
+  background-color: color-mix(in srgb, var(--accent) 10%, white);
 }
 
 .product-tag {
