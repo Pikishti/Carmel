@@ -813,11 +813,10 @@ p {
 }
 
 .value-card {
-  background-color: var(--white);
+  background-color: color-mix(in srgb, var(--wood) 10%, white);
   border-radius: var(--radius);
   padding: 28px;
   box-shadow: var(--shadow-card);
-  border-left: 4px solid var(--wood);
 }
 
 .value-card h3 {
