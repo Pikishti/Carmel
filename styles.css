@@ -682,9 +682,9 @@ p {
 }
 
 /* accent color classes */
-.accent-pumpkin-spice   { --accent: var(--pumpkin-spice); }
+.accent-pumpkin-spice   { --accent: var(--pumpkin-spice); --tag-ink: var(--text); }
 .accent-brown-sugar     { --accent: var(--brown-sugar); }
-.accent-honey-cinnamon  { --accent: var(--honey-cinnamon); }
+.accent-honey-cinnamon  { --accent: var(--honey-cinnamon); --tag-ink: #000; }
 .accent-vanilla         { --accent: var(--vanilla); --tag-ink: var(--text); --price-ink: var(--text); }
 .accent-mixed-berries   { --accent: var(--mixed-berries); }
 .accent-garlic-chili    { --accent: var(--garlic-chili); }
@@ -907,7 +907,7 @@ p {
   padding: 26px;
 }
 
-.info-card h3 {
+.info-card h2 {
   font-weight: var(--weight-subtitle);
   font-size: 1rem;
   margin-bottom: 8px;
@@ -1252,7 +1252,7 @@ p {
   margin-top: 14px;
 }
 
-.footer-col h4 {
+.footer-col h3 {
   color: var(--cream);
   font-size: 0.9rem;
   letter-spacing: 0.06em;
