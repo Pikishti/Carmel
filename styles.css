@@ -629,6 +629,13 @@ p {
   color: var(--price-ink);
 }
 
+/* Per-product WhatsApp order button */
+.whatsapp-order-btn,
+.whatsapp-order-btn-sample {
+  align-self: flex-start;
+  margin-top: 14px;
+}
+
 /* Flavor picker (Butter Sample Pack) */
 .flavor-picker {
   margin-top: 4px;

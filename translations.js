@@ -48,11 +48,16 @@ window.CARMEL_TRANSLATIONS = {
       instagram_aria: "Instagram",
       tag_syrup: "Jarabe",
       tag_butter: "Mantequilla",
+      order_whatsapp: "Ordenar por WhatsApp",
     },
 
     whatsapp: {
       aria: "Chatea con CARMEL Goods por WhatsApp",
       message: "Hola Carmel Goods, quisiera preguntar sobre sus productos",
+      order_message: "¡Hola! Me gustaría ordenar: {product} ({variant}). Cantidad: ___",
+      order_message_sample:
+        "¡Hola! Me gustaría ordenar: {product} ({variant}), sabores: {flavors}. Cantidad: ___",
+      or: "o",
     },
 
     home: {
@@ -130,8 +135,6 @@ window.CARMEL_TRANSLATIONS = {
       flavor_chimichurri: "Chimichurri",
       flavor_coffee: "Café Espresso",
       flavor_mixedberries: "Frutos Rojos",
-      flavor_picker_note:
-        "Este selector aún es solo visual. Indícanos tus 3 sabores al hacer tu pedido.",
       sample_size_label: "3 &times; frascos de 28g / 1oz",
     },
 
@@ -259,11 +262,16 @@ window.CARMEL_TRANSLATIONS = {
       instagram_aria: "Instagram",
       tag_syrup: "Syrup",
       tag_butter: "Butter",
+      order_whatsapp: "Order via WhatsApp",
     },
 
     whatsapp: {
       aria: "Chat with CARMEL Goods on WhatsApp",
       message: "Hi Carmel Goods, I'd like to ask about your products",
+      order_message: "Hi! I'd like to order: {product} ({variant}). Quantity: ___",
+      order_message_sample:
+        "Hi! I'd like to order: {product} ({variant}), flavors: {flavors}. Quantity: ___",
+      or: "or",
     },
 
     home: {
@@ -340,8 +348,6 @@ window.CARMEL_TRANSLATIONS = {
       flavor_chimichurri: "Chimichurri",
       flavor_coffee: "Espresso Coffee",
       flavor_mixedberries: "Mixed Berries",
-      flavor_picker_note:
-        "This selector is UI-only for now. Note your 3 flavors when you order.",
       sample_size_label: "3 &times; 28g / 1oz jars",
     },
 

@@ -69,6 +69,8 @@ function applyLanguage(lang) {
   });
 
   updateWhatsAppLink(lang);
+  updateProductOrderLinks(lang);
+  updateSampleOrderLink(lang);
 }
 
 // Saves the choice and re-renders the page in that language, no reload.
@@ -196,6 +198,8 @@ function initFlavorPicker() {
     boxes.forEach(function (box) {
       box.disabled = !box.checked && checkedCount >= MAX;
     });
+
+    updateSampleOrderLink(getCurrentLang());
   }
 
   boxes.forEach(function (box) {
@@ -266,11 +270,98 @@ function setFooterYear() {
   }
 }
 
+// Same WhatsApp number used everywhere on the site — the floating bubble
+// and every per-product order button all point at this one number.
+var WHATSAPP_NUMBER = "50252125030";
+
 // Builds the wa.me link with the prefilled message in the given language.
 function buildWhatsAppUrl(lang) {
   var message =
     getTranslation("whatsapp.message", lang) || getTranslation("whatsapp.message", DEFAULT_LANG);
-  return "https://wa.me/50252125030?text=" + encodeURIComponent(message);
+  return buildWhatsAppOrderUrl(message);
+}
+
+function buildWhatsAppOrderUrl(message) {
+  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+}
+
+// Reads a product card's own size/price (or size list) so the WhatsApp
+// message always matches exactly what's shown on the card, with no
+// separate copy of the same text to keep in sync.
+function readProductVariant(card, orWord) {
+  var meta = card.querySelector(".product-meta");
+  if (meta) {
+    var size = meta.querySelector(".product-size");
+    var price = meta.querySelector(".product-price");
+    return size && price ? size.textContent.trim() + " - " + price.textContent.trim() : "";
+  }
+
+  var parts = [];
+  card.querySelectorAll(".product-sizes li").forEach(function (li) {
+    var s = li.querySelector(".size");
+    var p = li.querySelector(".price");
+    if (s && p) parts.push(s.textContent.trim() + " - " + p.textContent.trim());
+  });
+  return parts.join(" " + orWord + " ");
+}
+
+// Per-product "Order via WhatsApp" buttons (every card except the Butter
+// Sample Pack, which needs its own dynamic flavor-aware message below).
+function updateProductOrderLinks(lang) {
+  var orWord = getTranslation("whatsapp.or", lang) || getTranslation("whatsapp.or", DEFAULT_LANG) || "or";
+  var template =
+    getTranslation("whatsapp.order_message", lang) ||
+    getTranslation("whatsapp.order_message", DEFAULT_LANG);
+
+  document.querySelectorAll(".product-card").forEach(function (card) {
+    var link = card.querySelector(".whatsapp-order-btn");
+    if (!link) return;
+
+    var nameEl = card.querySelector("h3");
+    var productName = nameEl ? nameEl.textContent.trim() : "";
+    var variant = readProductVariant(card, orWord);
+
+    var message = template.replace("{product}", productName).replace("{variant}", variant);
+    link.href = buildWhatsAppOrderUrl(message);
+  });
+}
+
+// Butter Sample Pack's order button: reads whichever flavor checkboxes are
+// actually checked right now and builds the message from that, so it always
+// reflects the customer's real selection instead of a fixed variant string.
+function updateSampleOrderLink(lang) {
+  var link = document.querySelector(".whatsapp-order-btn-sample");
+  if (!link) return;
+
+  var card = link.closest(".product-card");
+  var nameEl = card.querySelector("h3");
+  var productName = nameEl ? nameEl.textContent.trim() : "";
+  var variant = readProductVariant(card, "");
+
+  var flavorNames = [];
+  card.querySelectorAll('input[name="sample-flavor"]:checked').forEach(function (box) {
+    var label = box.closest("label");
+    var span = label ? label.querySelector("span") : null;
+    if (span) flavorNames.push(span.textContent.trim());
+  });
+
+  var message;
+  if (flavorNames.length) {
+    var template =
+      getTranslation("whatsapp.order_message_sample", lang) ||
+      getTranslation("whatsapp.order_message_sample", DEFAULT_LANG);
+    message = template
+      .replace("{product}", productName)
+      .replace("{variant}", variant)
+      .replace("{flavors}", flavorNames.join(", "));
+  } else {
+    var fallbackTemplate =
+      getTranslation("whatsapp.order_message", lang) ||
+      getTranslation("whatsapp.order_message", DEFAULT_LANG);
+    message = fallbackTemplate.replace("{product}", productName).replace("{variant}", variant);
+  }
+
+  link.href = buildWhatsAppOrderUrl(message);
 }
 
 // Refreshes the bubble's link and label whenever the language changes.
