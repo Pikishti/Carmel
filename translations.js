@@ -147,26 +147,13 @@ window.CARMEL_TRANSLATIONS = {
       breakfast_title: "Todo Empezó con el Desayuno",
       breakfast_p1:
         'Luz de la mañana. Un café servido con calma. Pan tostado, calientito, esperando la mantequilla. Esa es la sensación alrededor de la cual se construyó <span class="font-logo">Carmel</span>.',
-      breakfast_p2:
-        "Pero el desayuno siempre fue solo el comienzo de la historia, no el límite de la marca.",
 
       origin_eyebrow: "El Origen",
       origin_title: "Un Sueño de Campo, Vivido en el Mundo Real",
       origin_p1:
         '<span class="font-logo">Carmel</span> comenzó como un sueño despierto: una casa en el campo, un jardín lleno de flores, una vida más lenta y deliciosa, hecha casi todo desde cero.',
       origin_p2:
-        'Pero <span class="font-logo">Carmel</span> no romantiza escapar de la vida moderna. Combina ese sueño con la realidad de hoy: el teléfono, la comodidad, el estilo, la vida moderna.',
-      origin_line1:
-        "Simple y elegante. Cálido y moderno. Comodidad y estilo. Belleza y practicidad. Tradición y modernidad.",
-      origin_line2:
-        "El sueño no es recrear una vida a la antigua. Es traer esa sensación a la vida de hoy.",
-
-      core_eyebrow: "La Creencia Central",
-      core_title: "Los Pequeños Momentos Merecen Gran Atención",
-      core_p:
-        "Una vida hermosa no está hecha de eventos extraordinarios. Está hecha de pequeños momentos, notados y disfrutados a propósito.",
-      core_line:
-        "Una buena taza de café. Una vela favorita. Una mesa puesta con sencillez. Una mañana de domingo.",
+        'Pero <span class="font-logo">Carmel</span> no romantiza escapar de la vida moderna: trae esa sensación a la vida de hoy, con el teléfono en la mano, la vida a toda velocidad y el café siempre servido con calma.',
 
       clear_title: 'Seamos Claros: Lo Que en Realidad Significa &ldquo;Vivir Plenamente&rdquo;',
       contrast1_not: "No es extravagancia",
@@ -177,19 +164,16 @@ window.CARMEL_TRANSLATIONS = {
       contrast3_is: "Es disfrutar lo real",
       contrast4_not: "No es un truco de productividad",
       contrast4_is: "Es permiso para ir más despacio",
+      clear_closing_line:
+        "Una buena taza de café. Una vela favorita. Una mesa puesta con sencillez. Una mañana de domingo. Esa es toda la idea.",
 
       personality_eyebrow: "Nuestra Personalidad",
       personality_title: 'Si <span class="font-logo">Carmel</span> Fuera una Persona',
       personality_p:
         "Imagina a la amiga de gusto impecable que hace que todo se sienta fácil, hermoso y un poco divertido, y que de alguna manera te hace sentir mejor con tu propia vida solo por estar cerca.",
-      personality_line:
-        "Audaz, pero cálida. Divertida, nunca infantil. Elegante, nunca ostentosa.",
-
-      feeling_eyebrow: "La Sensación",
-      feeling_title: "Me Lo Merezco.",
-      feeling_signature: "Claro que puedo disfrutarlo.",
+      feeling_signature: "Me lo merezco. Claro que puedo disfrutarlo.",
       feeling_p:
-        "Ni culpa, ni exceso. Solo la tranquila confianza de saber que puedes disfrutar algo hermoso sin tener que explicarlo.",
+        "Ni culpa. Solo la tranquila confianza de saber que puedes disfrutar algo hermoso sin tener que explicarlo.",
 
       next_title: "Más Grande que el Desayuno",
       next_p:
@@ -360,26 +344,13 @@ window.CARMEL_TRANSLATIONS = {
       breakfast_title: "It Started With Breakfast",
       breakfast_p1:
         'Morning light. A slow pour of coffee. Toast, warm, waiting for butter. That\'s the feeling <span class="font-logo">Carmel</span> was built around.',
-      breakfast_p2:
-        "But breakfast was only ever the beginning of the story, not the edge of the brand.",
 
       origin_eyebrow: "The Origin",
       origin_title: "A Country Dream, Lived in the Real World",
       origin_p1:
         '<span class="font-logo">Carmel</span> started as a daydream: a house in the country, a garden full of flowers, a slower and more delicious kind of life made mostly from scratch.',
       origin_p2:
-        '<span class="font-logo">Carmel</span> doesn\'t romanticize escaping modern life. It combines that dream with the reality of today: the phone, convenience, style, modern life.',
-      origin_line1:
-        "Simple and elevated. Warm and modern. Comfort and style. Beauty and practicality. Tradition and modernity.",
-      origin_line2:
-        "The dream isn't to recreate an old-fashioned life. It's to bring that feeling into this one.",
-
-      core_eyebrow: "The Core Belief",
-      core_title: "Small Moments Deserve Big Attention",
-      core_p:
-        "A beautiful life isn't made of extraordinary events. It's made of little ones, noticed and enjoyed on purpose.",
-      core_line:
-        "A good cup of coffee. A favorite candle. A table set simply. A Sunday morning.",
+        '<span class="font-logo">Carmel</span> doesn\'t romanticize escaping modern life. It brings that feeling into this one: phone in hand, life moving fast, coffee still poured slowly.',
 
       clear_title: 'Let&rsquo;s Be Clear: What &ldquo;Live Fully&rdquo; Actually Means',
       contrast1_not: "Not extravagance",
@@ -390,18 +361,16 @@ window.CARMEL_TRANSLATIONS = {
       contrast3_is: "Enjoying real",
       contrast4_not: "Not a productivity hack",
       contrast4_is: "Permission to slow down",
+      clear_closing_line:
+        "A good cup of coffee. A favorite candle. A table set simply. A Sunday morning. That's the whole idea.",
 
       personality_eyebrow: "Our Personality",
       personality_title: 'If <span class="font-logo">Carmel</span> Were a Person',
       personality_p:
         "Picture the friend with impeccable taste who makes everything feel easy, beautiful, and a little bit fun, and somehow makes you feel better about your own life just by being around.",
-      personality_line: "Bold, yet warm. Playful, never childish. Stylish, never showy.",
-
-      feeling_eyebrow: "The Feeling",
-      feeling_title: "Me Lo Merezco.",
-      feeling_signature: "Of course I can enjoy this.",
+      feeling_signature: "Me lo merezco. Of course I can enjoy this.",
       feeling_p:
-        "Not guilt, not indulgence. Just the quiet confidence that you're allowed to enjoy something beautiful without explaining yourself.",
+        "Not guilt. Just the quiet confidence that you're allowed to enjoy something beautiful without explaining yourself.",
 
       next_title: "Bigger Than Breakfast",
       next_p:
