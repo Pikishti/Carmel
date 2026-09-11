@@ -62,8 +62,7 @@ window.CARMEL_TRANSLATIONS = {
       cta_story: "Nuestra Historia",
       story_teaser:
         "Cada frasco y botella se hace en pequeños lotes, con el mismo cuidado que le darías a algo hecho para tu propia mesa. CARMEL Goods es para las mañanas tranquilas, las comidas compartidas y los momentos simples que vale la pena saborear, una gota, una untada a la vez.",
-      fan_favorites: "Favoritos",
-      featured_heading: "Productos Destacados",
+      featured_heading: "Nuestros Favoritos",
       product_pumpkin_name: "Especias de Calabaza",
       product_pumpkin_desc:
         "Cálidas especias de otoño mezcladas con calabaza real y canela, ideales para lattes, repostería y waffles.",
@@ -137,7 +136,6 @@ window.CARMEL_TRANSLATIONS = {
     },
 
     about: {
-      hero_eyebrow: "Nuestra Filosofía",
       hero_title: "Vive Plenamente.",
       hero_lead:
         '<span class="font-logo">Carmel</span> nació del amor por el desayuno y el ritual de la mañana. Se trata de disfrutar las cosas simples, ser agradecidos y vivir plenamente.',
@@ -167,8 +165,7 @@ window.CARMEL_TRANSLATIONS = {
       core_line:
         "Una buena taza de café. Una vela favorita. Una mesa puesta con sencillez. Una mañana de domingo.",
 
-      clear_eyebrow: "Seamos Claros",
-      clear_title: 'Lo Que en Realidad Significa &ldquo;Vivir Plenamente&rdquo;',
+      clear_title: 'Seamos Claros: Lo Que en Realidad Significa &ldquo;Vivir Plenamente&rdquo;',
       contrast1_not: "No es extravagancia",
       contrast1_is: "Es estar presente",
       contrast2_not: "No es comprar más",
@@ -191,13 +188,11 @@ window.CARMEL_TRANSLATIONS = {
       feeling_p:
         "Ni culpa, ni exceso. Solo la tranquila confianza de saber que puedes disfrutar algo hermoso sin tener que explicarlo.",
 
-      next_eyebrow: "Lo Que Viene",
       next_title: "Más Grande que el Desayuno",
       next_p:
         '<span class="font-logo">Carmel</span> es un mundo, no una categoría. Los productos pueden crecer con el tiempo, pero la sensación sigue siendo la misma.',
       next_line: "Comida. Bebidas. Hogar. Cerámica. Velas. Hospitalidad.",
 
-      now_eyebrow: "Ahora Mismo",
       now_title: "Aquí es Donde Estamos Ahora",
       now_p:
         "Hoy, esa sensación vive en botellas de vidrio con jarabe y pequeños frascos de mantequilla, hechos en pequeños lotes.",
@@ -278,8 +273,7 @@ window.CARMEL_TRANSLATIONS = {
       cta_story: "Our Story",
       story_teaser:
         "Every jar and bottle is made in small batches, with the kind of care you'd give something made for your own kitchen table. CARMEL Goods is for slow mornings, shared meals, and the simple moments worth savoring, one pour, one spread at a time.",
-      fan_favorites: "Fan Favorites",
-      featured_heading: "Featured Products",
+      featured_heading: "Fan Favorites",
       product_pumpkin_name: "Pumpkin Spice",
       product_pumpkin_desc:
         "Warm autumn spice blended with real pumpkin and cinnamon for lattes, baking, and waffles.",
@@ -352,7 +346,6 @@ window.CARMEL_TRANSLATIONS = {
     },
 
     about: {
-      hero_eyebrow: "Our Philosophy",
       hero_title: "Live Fully.",
       hero_lead:
         '<span class="font-logo">Carmel</span> began with a love of breakfast and the morning ritual. It\'s about enjoying the simple things, being thankful, and living fully.',
@@ -382,8 +375,7 @@ window.CARMEL_TRANSLATIONS = {
       core_line:
         "A good cup of coffee. A favorite candle. A table set simply. A Sunday morning.",
 
-      clear_eyebrow: "Let's Be Clear",
-      clear_title: 'What &ldquo;Live Fully&rdquo; Actually Means',
+      clear_title: 'Let&rsquo;s Be Clear: What &ldquo;Live Fully&rdquo; Actually Means',
       contrast1_not: "Not extravagance",
       contrast1_is: "Just presence",
       contrast2_not: "Not buying more",
@@ -405,13 +397,11 @@ window.CARMEL_TRANSLATIONS = {
       feeling_p:
         "Not guilt, not indulgence. Just the quiet confidence that you're allowed to enjoy something beautiful without explaining yourself.",
 
-      next_eyebrow: "What's Next",
       next_title: "Bigger Than Breakfast",
       next_p:
         '<span class="font-logo">Carmel</span> is a world, not a category. The products can grow over time, but the feeling stays the same.',
       next_line: "Food. Drinks. Home. Ceramics. Candles. Hospitality.",
 
-      now_eyebrow: "Right Now",
       now_title: "Here's Where We Actually Are",
       now_p:
         "Today, that feeling lives in glass bottles of syrup and small jars of butter, made in small batches.",
