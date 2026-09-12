@@ -334,13 +334,13 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: none;
   border-radius: 50%;
   background-color: transparent;
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1;
@@ -1405,12 +1405,6 @@ p {
     justify-content: center;
     min-width: 44px;
     min-height: 44px;
-  }
-
-  .lang-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 0.75rem;
   }
 
   .nav-right {
