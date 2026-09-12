@@ -24,6 +24,11 @@
   --cream-deep: #fff3bc;
   --tan: #f0b8a8;
   --wood: #e07868;
+  /* Darker variant of --wood for text sitting directly on cream/white —
+     --wood itself doesn't clear WCAG AA as a text color on light
+     backgrounds; this does (4.5:1+ against both). Backgrounds, borders,
+     and badge fills keep using --wood unchanged. */
+  --wood-text: #a85a4e;
   --text: #3d1c02;
   --text-soft: rgba(61, 28, 2, 0.68);
   --white: #ffffff;
@@ -914,8 +919,8 @@ p {
 }
 
 .info-card h2 {
-  font-weight: var(--weight-subtitle);
-  font-size: 1rem;
+  font-weight: var(--weight-title);
+  font-size: 1.15rem;
   margin-bottom: 8px;
 }
 
@@ -949,7 +954,7 @@ p {
 }
 
 .social-links a:hover {
-  background-color: var(--wood);
+  background-color: var(--wood-text);
   color: var(--white);
   transform: translateY(-2px);
 }
@@ -1020,6 +1025,9 @@ p {
   text-align: center;
   overflow: hidden;
   color: var(--white);
+  /* Warm dark fallback matching the cafe-counter photo's own tone, so
+     there's no white flash or unreadable gap before the image loads. */
+  background-color: var(--text);
 }
 
 .photo-hero img {
@@ -1157,7 +1165,7 @@ p {
 }
 
 .contrast-arrow {
-  color: var(--wood);
+  color: var(--wood-text);
   font-weight: 700;
   font-size: 1.1rem;
 }
@@ -1175,7 +1183,7 @@ p {
   font-family: var(--font-body);
   font-weight: var(--weight-title);
   font-size: 2.4rem;
-  color: var(--wood);
+  color: var(--wood-text);
   margin: 0 0 16px;
 }
 
@@ -1260,7 +1268,7 @@ p {
 
 .footer-col h3 {
   color: var(--cream);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 16px;
