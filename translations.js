@@ -63,6 +63,15 @@ window.CARMEL_TRANSLATIONS = {
       or: "o",
     },
 
+    product_pages: {
+      back_to_products: "← Volver a Productos",
+      ingredients_heading: "Ingredientes",
+      ingredients_placeholder: "Ingredientes: próximamente.",
+      info_heading: "Información Importante",
+      info_placeholder:
+        "Alérgenos, almacenamiento y otros detalles: próximamente.",
+    },
+
     home: {
       hero_tagline:
         'Inspirada en el arte de saborear la vida, <span class="font-logo">Carmel</span> nació para quienes encuentran alegría en los momentos más simples y eligen vivirlos plenamente.',
@@ -263,6 +272,14 @@ window.CARMEL_TRANSLATIONS = {
       order_message_sample:
         "Hi! I'd like to order: {qty}x {product} ({variant}), flavors: {flavors}.",
       or: "or",
+    },
+
+    product_pages: {
+      back_to_products: "← Back to Products",
+      ingredients_heading: "Ingredients",
+      ingredients_placeholder: "Ingredients: coming soon.",
+      info_heading: "Important Info",
+      info_placeholder: "Allergens, storage, and other details: coming soon.",
     },
 
     home: {

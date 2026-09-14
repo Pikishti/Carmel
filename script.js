@@ -372,7 +372,7 @@ function updateProductOrderLinks(lang) {
     var link = card.querySelector(".whatsapp-order-btn");
     if (!link) return;
 
-    var nameEl = card.querySelector("h3");
+    var nameEl = card.querySelector("h1, h3");
     var productName = nameEl ? nameEl.textContent.trim() : "";
     var variant = readProductVariant(card, orWord);
     var qty = readProductQty(card);
@@ -393,7 +393,7 @@ function updateSampleOrderLink(lang) {
   if (!link) return;
 
   var card = link.closest(".product-card");
-  var nameEl = card.querySelector("h3");
+  var nameEl = card.querySelector("h1, h3");
   var productName = nameEl ? nameEl.textContent.trim() : "";
   var variant = readProductVariant(card, "");
   var qty = readProductQty(card);
