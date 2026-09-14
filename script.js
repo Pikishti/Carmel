@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   enhancePlaceholders();
   initScrollReveal();
   initFlavorPicker();
+  initQuantitySteppers();
   initWhatsAppBubble();
   initLanguageToggle();
 });
@@ -209,6 +210,51 @@ function initFlavorPicker() {
   update();
 }
 
+// Quantity stepper (−/number/+) on every product card, including the
+// Butter Sample Pack, where it counts packs rather than flavors. Each
+// stepper only ever touches its own card's input, so quantities never
+// carry over between products.
+function initQuantitySteppers() {
+  var steppers = document.querySelectorAll(".qty-stepper");
+  if (!steppers.length) return;
+
+  steppers.forEach(function (stepper) {
+    var input = stepper.querySelector(".qty-input");
+    var decreaseBtn = stepper.querySelector(".qty-decrease");
+    var increaseBtn = stepper.querySelector(".qty-increase");
+    if (!input) return;
+
+    function refreshOrderLinks() {
+      var lang = getCurrentLang();
+      updateProductOrderLinks(lang);
+      updateSampleOrderLink(lang);
+    }
+
+    function setQty(value) {
+      if (isNaN(value) || value < 1) value = 1;
+      input.value = value;
+      refreshOrderLinks();
+    }
+
+    if (decreaseBtn) {
+      decreaseBtn.addEventListener("click", function () {
+        setQty(parseInt(input.value, 10) - 1);
+      });
+    }
+
+    if (increaseBtn) {
+      increaseBtn.addEventListener("click", function () {
+        setQty(parseInt(input.value, 10) + 1);
+      });
+    }
+
+    input.addEventListener("input", refreshOrderLinks);
+    input.addEventListener("change", function () {
+      setQty(parseInt(input.value, 10));
+    });
+  });
+}
+
 // Contact form — submits to Formspree without leaving the page
 function initContactForm() {
   var form = document.getElementById("contact-form");
@@ -305,6 +351,15 @@ function readProductVariant(card, orWord) {
   return parts.join(" " + orWord + " ");
 }
 
+// Reads a product card's quantity stepper, defaulting to 1 for cards
+// without one (or an invalid/empty value mid-edit).
+function readProductQty(card) {
+  var input = card.querySelector(".qty-input");
+  if (!input) return 1;
+  var value = parseInt(input.value, 10);
+  return value >= 1 ? value : 1;
+}
+
 // Per-product "Order via WhatsApp" buttons (every card except the Butter
 // Sample Pack, which needs its own dynamic flavor-aware message below).
 function updateProductOrderLinks(lang) {
@@ -320,8 +375,12 @@ function updateProductOrderLinks(lang) {
     var nameEl = card.querySelector("h3");
     var productName = nameEl ? nameEl.textContent.trim() : "";
     var variant = readProductVariant(card, orWord);
+    var qty = readProductQty(card);
 
-    var message = template.replace("{product}", productName).replace("{variant}", variant);
+    var message = template
+      .replace("{qty}", qty)
+      .replace("{product}", productName)
+      .replace("{variant}", variant);
     link.href = buildWhatsAppOrderUrl(message);
   });
 }
@@ -337,6 +396,7 @@ function updateSampleOrderLink(lang) {
   var nameEl = card.querySelector("h3");
   var productName = nameEl ? nameEl.textContent.trim() : "";
   var variant = readProductVariant(card, "");
+  var qty = readProductQty(card);
 
   var flavorNames = [];
   card.querySelectorAll('input[name="sample-flavor"]:checked').forEach(function (box) {
@@ -351,6 +411,7 @@ function updateSampleOrderLink(lang) {
       getTranslation("whatsapp.order_message_sample", lang) ||
       getTranslation("whatsapp.order_message_sample", DEFAULT_LANG);
     message = template
+      .replace("{qty}", qty)
       .replace("{product}", productName)
       .replace("{variant}", variant)
       .replace("{flavors}", flavorNames.join(", "));
@@ -358,7 +419,10 @@ function updateSampleOrderLink(lang) {
     var fallbackTemplate =
       getTranslation("whatsapp.order_message", lang) ||
       getTranslation("whatsapp.order_message", DEFAULT_LANG);
-    message = fallbackTemplate.replace("{product}", productName).replace("{variant}", variant);
+    message = fallbackTemplate
+      .replace("{qty}", qty)
+      .replace("{product}", productName)
+      .replace("{variant}", variant);
   }
 
   link.href = buildWhatsAppOrderUrl(message);

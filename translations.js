@@ -49,14 +49,17 @@ window.CARMEL_TRANSLATIONS = {
       tag_syrup: "Jarabe",
       tag_butter: "Mantequilla",
       order_whatsapp: "Ordenar por WhatsApp",
+      qty_decrease_aria: "Reducir cantidad",
+      qty_increase_aria: "Aumentar cantidad",
+      qty_input_aria: "Cantidad",
     },
 
     whatsapp: {
       aria: "Chatea con CARMEL Goods por WhatsApp",
       message: "Hola Carmel Goods, quisiera preguntar sobre sus productos",
-      order_message: "¡Hola! Me gustaría ordenar: {product} ({variant}). Cantidad: ___",
+      order_message: "¡Hola! Me gustaría ordenar: {qty}x {product} ({variant}).",
       order_message_sample:
-        "¡Hola! Me gustaría ordenar: {product} ({variant}), sabores: {flavors}. Cantidad: ___",
+        "¡Hola! Me gustaría ordenar: {qty}x {product} ({variant}), sabores: {flavors}.",
       or: "o",
     },
 
@@ -136,6 +139,7 @@ window.CARMEL_TRANSLATIONS = {
       flavor_coffee: "Café Espresso",
       flavor_mixedberries: "Frutos Rojos",
       sample_size_label: "3 &times; frascos de 28g / 1oz",
+      qty_pack_label: "Cantidad de paquetes:",
     },
 
     about: {
@@ -247,14 +251,17 @@ window.CARMEL_TRANSLATIONS = {
       tag_syrup: "Syrup",
       tag_butter: "Butter",
       order_whatsapp: "Order via WhatsApp",
+      qty_decrease_aria: "Decrease quantity",
+      qty_increase_aria: "Increase quantity",
+      qty_input_aria: "Quantity",
     },
 
     whatsapp: {
       aria: "Chat with CARMEL Goods on WhatsApp",
       message: "Hi Carmel Goods, I'd like to ask about your products",
-      order_message: "Hi! I'd like to order: {product} ({variant}). Quantity: ___",
+      order_message: "Hi! I'd like to order: {qty}x {product} ({variant}).",
       order_message_sample:
-        "Hi! I'd like to order: {product} ({variant}), flavors: {flavors}. Quantity: ___",
+        "Hi! I'd like to order: {qty}x {product} ({variant}), flavors: {flavors}.",
       or: "or",
     },
 
@@ -333,6 +340,7 @@ window.CARMEL_TRANSLATIONS = {
       flavor_coffee: "Espresso Coffee",
       flavor_mixedberries: "Mixed Berries",
       sample_size_label: "3 &times; 28g / 1oz jars",
+      qty_pack_label: "Number of packs:",
     },
 
     about: {

@@ -693,6 +693,91 @@ p {
   margin: 10px 0 0;
 }
 
+/* Quantity stepper (every product card, incl. the Butter Sample Pack,
+   where it counts packs — separate from the flavor picker above). Buttons
+   are sized to the 40x40px touch-target minimum used elsewhere on the site
+   (see .lang-btn). */
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  align-self: flex-start;
+  margin-top: 14px;
+  padding: 4px;
+  border-radius: 999px;
+  background-color: var(--cream);
+  flex-shrink: 0;
+}
+
+.qty-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.qty-btn:hover {
+  background-color: var(--wood);
+  color: var(--white);
+}
+
+.qty-btn:active {
+  transform: scale(0.94);
+}
+
+.qty-input {
+  width: 42px;
+  height: 40px;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  -moz-appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Butter Sample Pack: quantity means "how many packs", so it gets its own
+   labeled row instead of sitting silently next to the flavor picker. */
+.qty-stepper-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.qty-stepper-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.qty-stepper-row .qty-stepper {
+  margin-top: 0;
+}
+
 /* accent color classes */
 .accent-pumpkin-spice   { --accent: var(--pumpkin-spice); --tag-ink: var(--text); }
 .accent-brown-sugar     { --accent: var(--brown-sugar); }
