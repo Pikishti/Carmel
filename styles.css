@@ -23,15 +23,17 @@
   --cream: #fff8e7;
   --cream-deep: #fff3bc;
   --tan: #f0b8a8;
-  /* General site accent (underlines, eyebrow labels, borders, active nav
-     state). As foreground color on cream/white it measures ~2:1 — well
-     under WCAG AA's 4.5:1 (text) and even 3:1 (non-text/UI) — so decorative
-     uses (borders, underlines, focus rings) are fine, but the handful of
-     spots below that use it as actual text/icon color (.eyebrow,
-     .qty-btn:hover, .info-card a:hover, .accent-word) do not pass AA.
-     Flagged, not silently patched with an off-palette shade — see commit
-     message / handoff notes. */
+  /* General site accent — decorative uses only (underlines, borders,
+     focus rings, active nav state, checkbox tint). As foreground color on
+     cream/white it measures ~2:1, under both WCAG AA's 4.5:1 (text) and
+     3:1 (non-text/UI) floors, so it is never used as text/icon color —
+     see --blue below for the text-safe accent instead. */
   --light-blue: #9db8d8;
+  /* Text-safe accent — same family as --light-blue, used wherever the
+     accent needs to render as actual text/icon color: .eyebrow,
+     .info-card a:hover, .qty-btn:hover. Clears WCAG AA (5:1+) against
+     both cream and white. */
+  --blue: #2e6baf;
   /* Muted coral/salmon accent, kept independent of --light-blue above.
      Still used where a readable (contrast-passing) accent-colored text is
      needed — back-link, quote arrows, signature line — since it clears
@@ -165,7 +167,7 @@ p {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--light-blue);
+  color: var(--blue);
   margin-bottom: 0.75em;
 }
 
@@ -750,7 +752,7 @@ p {
 }
 
 .qty-btn:hover {
-  background-color: var(--light-blue);
+  background-color: var(--blue);
   color: var(--white);
 }
 
@@ -1109,7 +1111,7 @@ p {
 }
 
 .info-card a:hover {
-  color: var(--light-blue);
+  color: var(--blue);
 }
 
 .social-links {
@@ -1432,8 +1434,9 @@ p {
   margin-bottom: 36px;
 }
 
-/* Footer accent elements — Butter Yellow (--cream-deep) on the Light Blue
-   footer background is a confirmed brand-system pairing. */
+/* Footer logo — Butter Yellow (--cream-deep) on the Light Blue footer
+   background is a confirmed brand-system pairing; logos are exempt from
+   text contrast rules. */
 .footer-grid .logo-mark,
 .footer-grid .logo-sub {
   color: var(--cream-deep);
@@ -1446,8 +1449,11 @@ p {
   margin-top: 14px;
 }
 
+/* Real content headings (not the logo) — --text reads at 7.5:1 against
+   the Light Blue footer background; Butter Yellow only manages 1.83:1
+   here, which doesn't clear AA for actual reading text. */
 .footer-col h3 {
-  color: var(--cream-deep);
+  color: var(--text);
   font-size: 0.95rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
