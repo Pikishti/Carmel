@@ -23,11 +23,19 @@
   --cream: #fff8e7;
   --cream-deep: #fff3bc;
   --tan: #f0b8a8;
-  --wood: #e07868;
-  /* Darker variant of --wood for text sitting directly on cream/white —
-     --wood itself doesn't clear WCAG AA as a text color on light
-     backgrounds; this does (4.5:1+ against both). Backgrounds, borders,
-     and badge fills keep using --wood unchanged. */
+  /* General site accent (underlines, eyebrow labels, borders, active nav
+     state). As foreground color on cream/white it measures ~2:1 — well
+     under WCAG AA's 4.5:1 (text) and even 3:1 (non-text/UI) — so decorative
+     uses (borders, underlines, focus rings) are fine, but the handful of
+     spots below that use it as actual text/icon color (.eyebrow,
+     .qty-btn:hover, .info-card a:hover, .accent-word) do not pass AA.
+     Flagged, not silently patched with an off-palette shade — see commit
+     message / handoff notes. */
+  --light-blue: #9db8d8;
+  /* Muted coral/salmon accent, kept independent of --light-blue above.
+     Still used where a readable (contrast-passing) accent-colored text is
+     needed — back-link, quote arrows, signature line — since it clears
+     WCAG AA (4.5:1+) against cream/white and --light-blue does not. */
   --wood-text: #a85a4e;
   --text: #3d1c02;
   --text-soft: rgba(61, 28, 2, 0.68);
@@ -117,7 +125,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2.5px solid var(--wood);
+  outline: 2.5px solid var(--light-blue);
   outline-offset: 3px;
 }
 
@@ -157,7 +165,7 @@ p {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--wood);
+  color: var(--light-blue);
   margin-bottom: 0.75em;
 }
 
@@ -274,7 +282,7 @@ p {
   font-family: "Hinato", "Georgia", serif;
   font-weight: normal;
   font-size: 1.2rem;
-  color: var(--wood);
+  color: var(--text);
   margin-top: -2px;
   margin-left: 4px;
 }
@@ -295,7 +303,7 @@ p {
 
 .nav-links a:hover,
 .nav-links a.active {
-  border-bottom-color: var(--wood);
+  border-bottom-color: var(--light-blue);
 }
 
 .nav-toggle {
@@ -365,7 +373,7 @@ p {
   opacity: 1;
   color: var(--text);
   background-color: var(--cream);
-  box-shadow: inset 0 0 0 2px var(--wood);
+  box-shadow: inset 0 0 0 2px var(--light-blue);
 }
 
 .lang-btn.active:hover {
@@ -427,7 +435,7 @@ p {
     var(--tan) 12px,
     var(--tan) 24px
   );
-  border: 1.5px dashed var(--wood);
+  border: 1.5px dashed var(--light-blue);
   border-radius: var(--radius);
   color: var(--text-soft);
   font-family: var(--font-body);
@@ -519,7 +527,7 @@ p {
 }
 
 .product-card {
-  --accent: var(--wood);
+  --accent: var(--light-blue);
   --tag-ink: var(--white);
   --price-ink: var(--accent);
   background-color: var(--white);
@@ -686,7 +694,7 @@ p {
 }
 
 .flavor-options input[type="checkbox"] {
-  accent-color: var(--wood);
+  accent-color: var(--light-blue);
   width: 16px;
   height: 16px;
   flex-shrink: 0;
@@ -742,7 +750,7 @@ p {
 }
 
 .qty-btn:hover {
-  background-color: var(--wood);
+  background-color: var(--light-blue);
   color: var(--white);
 }
 
@@ -995,7 +1003,7 @@ p {
 }
 
 .value-card {
-  background-color: color-mix(in srgb, var(--wood) 10%, white);
+  background-color: color-mix(in srgb, var(--light-blue) 10%, white);
   border-radius: var(--radius);
   padding: 28px;
   box-shadow: var(--shadow-card);
@@ -1060,8 +1068,8 @@ p {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--wood);
-  box-shadow: 0 0 0 3px rgba(224, 120, 104, 0.2);
+  border-color: var(--light-blue);
+  box-shadow: 0 0 0 3px rgba(157, 184, 216, 0.2);
 }
 
 .form-group textarea {
@@ -1101,7 +1109,7 @@ p {
 }
 
 .info-card a:hover {
-  color: var(--wood);
+  color: var(--light-blue);
 }
 
 .social-links {
@@ -1268,7 +1276,7 @@ p {
 .accent-word {
   font-family: var(--font-body);
   font-weight: var(--weight-subtitle);
-  color: var(--wood);
+  color: var(--light-blue);
 }
 
 /* Full-width quote band */
@@ -1411,8 +1419,8 @@ p {
    ========================================================= */
 
 .site-footer {
-  background-color: var(--text);
-  color: var(--cream);
+  background-color: var(--light-blue);
+  color: var(--text);
   padding: 56px 0 28px;
   margin-top: 40px;
 }
@@ -1424,20 +1432,22 @@ p {
   margin-bottom: 36px;
 }
 
+/* Footer accent elements — Butter Yellow (--cream-deep) on the Light Blue
+   footer background is a confirmed brand-system pairing. */
 .footer-grid .logo-mark,
 .footer-grid .logo-sub {
-  color: var(--cream);
+  color: var(--cream-deep);
 }
 
 .footer-about p {
-  color: var(--tan);
+  color: var(--text);
   font-size: 0.9rem;
   max-width: 34ch;
   margin-top: 14px;
 }
 
 .footer-col h3 {
-  color: var(--cream);
+  color: var(--cream-deep);
   font-size: 0.95rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1449,21 +1459,21 @@ p {
 }
 
 .footer-col a {
-  color: var(--tan);
+  color: var(--text);
   font-size: 0.92rem;
   transition: color 0.2s ease;
 }
 
 .footer-col a:hover {
-  color: var(--white);
+  color: var(--cream-deep);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 248, 231, 0.15);
+  border-top: 1px solid rgba(61, 28, 2, 0.15);
   padding-top: 22px;
   text-align: center;
   font-size: 0.8rem;
-  color: var(--tan);
+  color: var(--text);
 }
 
 /* =========================================================
